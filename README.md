@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+🇬🇧
+The following project consists of a books e-commerce, namely focused upon the classics of English literature. The model that inspired me in my choice is Penguin Books website, a very well-renowned English publishing company that I know and whose work I admire, being passioned about books and literature.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this project isn't just that of creating a simple books e-commerce suitable for viewing and reviewing a single work or author in detail and the relative information, adding every single book to the cart or to the personal wishlist after being logged in, but also a virtual space suitable for retrieving the best classics of English literature in all their richness, in order to make it useful for the student or scholar, without excluding the common reader.
 
-## Available Scripts
+The APIs that I have chosen to use are those of Google Books, whose documentation can be found at the following link: https://developers.google.com/books.
 
-In the project directory, you can run:
+Enjoy!
 
-### `npm start`
+🇮🇹
+Il presente progetto consiste in un sito web di e-commerce di libri, e più specificatamente di classici della letteratura inglese. Il modello a cui mi sono rifatta è il sito della Penguin Books, nota casa editrice britannica, che conosco e di cui apprezzo molto il lavoro, essendo appassionata di libri e letteratura, tanto che vorrei impostare il lavoro proponendo un vero e proprio clone della sezione Shop del sito in questione.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+L’obiettivo è quello di creare un sito in cui sia possibile effettuare acquisti di libri, ma dove sia anche possibile consultare nel dettaglio ogni opera o autore e le informazioni a riguardo (avendo una lista di preferiti oltre a un carrello in cui inserire libri da acquistare e un login all’apertura), creando uno spazio unico in cui poter reperire i classici della letteratura inglese nella loro completezza, che possa essere utile sia allo studente che all’accademico, passando per il lettore comune.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le API con cui vorrei interfacciarmi sono quelle di Google Books, la cui documentazione è disponibile al link: https://developers.google.com/books.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Buon divertimento!
