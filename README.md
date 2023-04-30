@@ -1,3 +1,5 @@
+<h1>Project intro</h1>
+
 🇬🇧
 The following project consists of a books e-commerce, namely focused upon the classics of English literature. The model that inspired me in my choice is Penguin Books website, a very well-renowned English publishing company that I know and whose work I admire, being passioned about books and literature.
 
