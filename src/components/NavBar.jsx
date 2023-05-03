@@ -1,6 +1,7 @@
 import { Container, Navbar, Nav, Offcanvas } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import { BsFillBagHeartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -27,17 +28,25 @@ const NavBar = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 gap-4">
-                  <Nav.Link className="navLinks" href="#action1">
-                    Log in
+                  <Nav.Link className="navLinks">
+                    <Link className="navLink" to="/login">
+                      Log in
+                    </Link>
                   </Nav.Link>
-                  <Nav.Link className="navLinks" href="#action2">
-                    Books
+                  <Nav.Link className="navLinks">
+                    <Link className="navLink" to="/search">
+                      Search books
+                    </Link>
                   </Nav.Link>
-                  <Nav.Link className="navLinks" href="#action3">
-                    Favourites
+                  <Nav.Link className="navLinks">
+                    <Link className="navLink" to="/favourites">
+                      Favourites
+                    </Link>
                   </Nav.Link>
-                  <Nav.Link href="#action4">
-                    <BsFillBagHeartFill className="addToCart" />
+                  <Nav.Link>
+                    <Link className="navLink" to="/cart">
+                      <BsFillBagHeartFill className="addToCart" />
+                    </Link>
                   </Nav.Link>
                 </Nav>
               </Offcanvas.Body>

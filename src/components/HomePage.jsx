@@ -19,7 +19,7 @@ const HomePage = () => {
           <blockquote className="blockquote mb-0">
             <p> “And what is the use of a book," thought Alice, "without pictures or conversation?”</p>
             <footer className="blockquote-footer">
-              Lewis Carrol, <cite title="Source Title">Alice's Adventures in Wonderland</cite>
+              Lewis Carroll, <cite title="Source Title">Alice's Adventures in Wonderland</cite>
             </footer>
           </blockquote>
           <button className="carouselBtn"> Discover more</button>

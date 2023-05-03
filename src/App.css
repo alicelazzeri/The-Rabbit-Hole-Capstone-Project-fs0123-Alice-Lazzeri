@@ -114,3 +114,45 @@ body {
 .blockquote-footer {
   margin-top: 3rem;
 }
+
+#footer {
+  background-color: #3c3c3c;
+  color: #fefefe;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.socialIcons {
+  width: 150px;
+}
+
+.flexFooter {
+  padding-inline: 2rem;
+}
+
+.footerTitle {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 1.2rem;
+}
+
+.footerLinks,
+.copyright {
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+
+.footerIcon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fefefe;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #2c2c2c;
+}
