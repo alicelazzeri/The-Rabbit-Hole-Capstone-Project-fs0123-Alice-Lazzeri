@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <>
       {["md"].map(expand => (
-        <Navbar id="navBar" key={expand} expand={expand} className="mb-3 px-4 navbar-dark">
+        <Navbar id="navBar" key={expand} expand={expand} className="px-4 navbar-dark">
           <Container fluid>
             <Navbar.Brand className="navbarBrand" href="#">
               <img id="navbarLogo" src={logo} alt="Brand logo" width={60} height={60} className="rounded-circle" />

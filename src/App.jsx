@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <BrowserRouter>
           <NavBar />
           <Routes>
-            <Route></Route>
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </BrowserRouter>
       </header>
