@@ -1,5 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Gantari:ital,wght@0,100;0,400;1,100;1,400&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
+}
+
+#navBar {
+  background-color: #5a2727;
+}
+
+#navbarLogo {
+  margin-right: 1rem;
+}
+
+.navbarBrand {
+  color: #fefefe;
+  font-family: "Berkshire Swash", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.navLinks {
+  margin-bottom: 0;
+  color: #fefefe;
+  font-size: 1.2rem;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.addToCart {
+  margin-bottom: 0.3rem;
+  color: #fefefe;
+  font-size: 1.5rem;
+}
+
+.addToCart:hover {
+  color: #2c2c2c;
+}
+
+.navbarOffcanvas {
+  background-color: #5a2727;
+  padding-top: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.closeBtn {
+  color: #fefefe;
+}
+
+.subtitle {
+  font-family: "Gantari", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
 }
