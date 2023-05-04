@@ -139,12 +139,25 @@ body {
 .copyright {
   font-weight: 100;
   font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
 
 .footerIcon {
   font-size: 1.8rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footerIcon:hover {
+  color: #5a2727;
+  cursor: pointer;
+}
+
+.footerLinks:hover {
+  background-color: #5a2727;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .navLink {
@@ -155,4 +168,50 @@ body {
 
 .navLink:hover {
   color: #2c2c2c;
+}
+
+.newsletterTitle {
+  font-family: "Berkshire Swash", cursive;
+  color: #fefefe;
+  margin-top: 2rem;
+  text-align: start;
+  margin-left: 2rem;
+}
+
+.newsletterBody {
+  color: #fefefe;
+  margin-top: 2rem;
+  font-family: "Gantari", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 100;
+  width: 400px;
+  text-align: start;
+  margin-left: 2rem;
+}
+
+.newsletterContainer {
+  background-color: #8aa789;
+  border-top: 2px solid #1c3513;
+  border-bottom: 2px solid #1c3513;
+}
+
+.spanTitle {
+  font-family: "Berkshire Swash", cursive;
+}
+
+.newsletterForm {
+  padding-inline: 3rem;
+}
+
+.checkbox {
+  color: #fefefe;
+  font-weight: 100;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: start;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }

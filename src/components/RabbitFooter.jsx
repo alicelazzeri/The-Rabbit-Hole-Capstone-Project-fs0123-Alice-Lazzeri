@@ -1,6 +1,7 @@
 import { BsInstagram, BsFacebook, BsTwitter, BsPinterest, BsYoutube } from "react-icons/bs";
 import { FaGoodreads } from "react-icons/fa";
 import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 const RabbitFooter = () => {
   return (
     <footer id="footer">
@@ -42,7 +43,9 @@ const RabbitFooter = () => {
       <hr />
       <div className="d-flex flex-column flex-md-row justify-content-md-between align-items-start align-items-md-center mt-5 px-5">
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-          <img src={logo} alt="Logo pic" width={40} height={40} className="rounded-circle mb-2 mb-md-0" />
+          <Link className="navLink" to="/">
+            <img src={logo} alt="Logo pic" width={40} height={40} className="rounded-circle mb-2 mb-md-0" />
+          </Link>
           <p className="footerTitle mt-2 mt-md-0 mb-0 ms-md-2">The Rabbit Hole</p>
         </div>
         <p className="copyright mt-2 mt-md-0 mb-0"> &#169; 2023 The Rabbit Hole | Epicode | Alice Lazzeri</p>

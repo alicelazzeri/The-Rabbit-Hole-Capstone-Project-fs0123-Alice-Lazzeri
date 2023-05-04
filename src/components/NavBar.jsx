@@ -10,7 +10,9 @@ const NavBar = () => {
         <Navbar id="navBar" key={expand} expand={expand} className="px-4 navbar-dark">
           <Container fluid>
             <Navbar.Brand className="navbarBrand" href="#">
-              <img id="navbarLogo" src={logo} alt="Brand logo" width={60} height={60} className="rounded-circle" />
+              <Link className="navLink" to="/">
+                <img id="navbarLogo" src={logo} alt="Brand logo" width={60} height={60} className="rounded-circle" />
+              </Link>
               The Rabbit Hole
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
