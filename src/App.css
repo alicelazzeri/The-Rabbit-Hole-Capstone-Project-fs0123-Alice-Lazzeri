@@ -226,7 +226,6 @@ body {
 }
 
 .aboutContainer {
-  text-align: start;
   padding-inline: 3rem;
 }
 
@@ -607,4 +606,34 @@ body {
 
 .deleteBtn:hover {
   background-color: #fece6d;
+}
+
+.divider {
+  border: 2px solid #1c3513;
+  margin-bottom: 3rem;
+}
+
+.releasesContainer {
+  padding-inline: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.releasesTitle {
+  font-family: "Berkshire Swash", cursive;
+}
+
+.releasesBody {
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-family: "Gantari", sans-serif;
+}
+
+.homeCardContainer {
+  min-width: 500px;
+  overflow-x: scroll;
+}
+
+.homeCard {
+  margin-top: -5rem;
 }

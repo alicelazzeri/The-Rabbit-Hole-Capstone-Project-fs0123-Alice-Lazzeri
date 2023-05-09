@@ -6,6 +6,7 @@ import dickens from "../assets/images/dickens.jpg";
 import hardy from "../assets/images/hardy.png";
 import NewsLetter from "./NewsLetter";
 import About from "./About";
+import NewReleases from "./NewReleases";
 
 const HomePage = () => {
   const [index, setIndex] = useState(0);
@@ -79,6 +80,7 @@ const HomePage = () => {
         </Carousel.Item>
       </Carousel>
       <About />
+      <NewReleases />
       <NewsLetter />
     </>
   );
