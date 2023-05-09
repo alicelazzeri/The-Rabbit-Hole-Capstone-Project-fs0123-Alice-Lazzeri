@@ -7,8 +7,8 @@ import RabbitFooter from "./components/RabbitFooter";
 import NotFound from "./components/NotFound";
 import BookSearch from "./components/BookSearch";
 import FavouritesBooks from "./components/FavouriteBooks";
-import BooksCart from "./components/BooksCart";
 import LoginPage from "./components/LoginPage";
+import TopScrollBtn from "./components/TopScrollBtn";
 
 function App() {
   return (
@@ -20,11 +20,11 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />
-          <Route path="/cart" element={<BooksCart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <RabbitFooter />
       </BrowserRouter>
+      <TopScrollBtn />
     </div>
   );
 }

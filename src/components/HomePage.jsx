@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import books from "../assets/images/books.jpg";
+import carroll from "../assets/images/carroll.jpg";
 import austen from "../assets/images/austen.jpg";
 import dickens from "../assets/images/dickens.jpg";
+import hardy from "../assets/images/hardy.png";
 import NewsLetter from "./NewsLetter";
+import About from "./About";
 
 const HomePage = () => {
   const [index, setIndex] = useState(0);
@@ -16,7 +18,7 @@ const HomePage = () => {
     <>
       <Carousel id="carouselHero" activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
-          <img className="d-block w-100 carouselPic" src={books} alt="Slide pic" width={500} height={600} />
+          <img className="d-block w-100 carouselPic" src={carroll} alt="Slide pic" width={500} height={600} />
           <Carousel.Caption>
             <blockquote className="blockquote mb-0">
               <p> “And what is the use of a book," thought Alice, "without pictures or conversation?”</p>
@@ -59,7 +61,24 @@ const HomePage = () => {
             <button className="carouselBtn"> Discover more</button>
           </Carousel.Caption>
         </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100 carouselPic" src={hardy} alt="Slide pic" width={500} height={600} />
+          <Carousel.Caption>
+            <blockquote className="blockquote">
+              <p>
+                {" "}
+                To speak like a book I once read, wet weather is the narrative, and fine days are the episodes, of our
+                country’s history.
+              </p>
+              <footer className="blockquote-footer">
+                Thomas Hardy, <cite title="Source Title">Far from the Madding Crowd</cite>
+              </footer>
+            </blockquote>
+            <button className="carouselBtn"> Discover more</button>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
+      <About />
       <NewsLetter />
     </>
   );

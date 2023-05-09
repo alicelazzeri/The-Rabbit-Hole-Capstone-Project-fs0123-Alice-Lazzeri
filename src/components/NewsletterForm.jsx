@@ -29,9 +29,9 @@ const NewsletterForm = () => {
   const [modalShow, setModalShow] = useState(false);
 
   const handleSubmit = event => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
     }
     setValidated(true);
@@ -41,16 +41,16 @@ const NewsletterForm = () => {
     <Form className="newsletterForm" noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3 mt-4 mt-md-5">
         <Form.Group className="mb-3 mb-md-0" as={Col} md="6" controlId="validationCustom01">
-          <Form.Control required type="text" placeholder="Your name" />
+          <Form.Control required type="text" placeholder="Name" />
         </Form.Group>
         <FormGroup as={Col} md="6" controlId="validationCustom02">
-          <Form.Control required type="text" placeholder="Your surname" />
+          <Form.Control required type="text" placeholder="Surname" />
         </FormGroup>
       </Row>
       <Row>
         <FormGroup as={Col} md="12" controlId="validationCustomUsername">
           <InputGroup hasValidation>
-            <Form.Control type="text" placeholder="Your email" aria-describedby="inputGroupPrepend" required />
+            <Form.Control type="text" placeholder="Email" aria-describedby="inputGroupPrepend" required />
             <Form.Control.Feedback type="invalid">Please choose a username.</Form.Control.Feedback>
           </InputGroup>
         </FormGroup>
