@@ -429,7 +429,7 @@ body {
   object-fit: cover;
 }
 
-.cardTitle {
+.bookTitle {
   font-family: "Gantari", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
@@ -448,7 +448,8 @@ body {
 }
 
 .detailsBtn,
-.buyBtn {
+.buyBtn,
+.addToFavBtn {
   color: #fefefe;
   border: none;
   padding-top: 0.5rem;
@@ -457,6 +458,7 @@ body {
   padding-left: 1rem;
   border-radius: 10px;
   font-size: 1.2rem;
+  font-weight: bold;
   font-family: "Gantari", sans-serif;
 }
 
@@ -476,6 +478,15 @@ body {
 
 .buyBtn:hover {
   background-color: #5e8152;
+}
+
+.addToFavBtn {
+  background-color: #e0aa35;
+  transition: background-color 0.5s ease;
+}
+
+.addToFavBtn:hover {
+  background-color: #fece6d;
 }
 
 .cardsRow {
@@ -548,12 +559,33 @@ body {
 }
 
 .favContainer {
-  margin-top: 10rem;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
 }
 
 .favTitle {
   font-family: "Berkshire Swash", cursive;
   color: #1c3513;
+}
+
+.favPic {
+  object-fit: cover;
+  border: 1px solid #1c3513;
+}
+
+.tableHead {
+  background-color: #1c3513;
+  color: #fefefe;
+  height: 70px;
+  font-size: 1.7rem;
+  border: 0px solid;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.tableRow {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 100;
 }
 
 .tableRow:nth-child(odd) {
@@ -562,4 +594,17 @@ body {
 
 .tableRow:nth-child(even) {
   background-color: #8aa78900;
+}
+
+.deleteBtn {
+  border: none;
+  background-color: #e0aa35;
+  color: #fefefe;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  transition: background-color 0.5s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #fece6d;
 }
