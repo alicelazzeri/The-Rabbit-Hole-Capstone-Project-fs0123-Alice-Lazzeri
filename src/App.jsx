@@ -9,8 +9,17 @@ import BookSearch from "./components/BookSearch";
 import FavouritesBooks from "./components/FavouriteBooks";
 import LoginPage from "./components/LoginPage";
 import TopScrollBtn from "./components/TopScrollBtn";
+import { getBooksFetch } from "./redux/actions";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import BookDetails from "./components/BookDetails";
 
 function App() {
+  let dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooksFetch());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,6 +29,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />
+          <Route path="/details" element={<BookDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <RabbitFooter />
