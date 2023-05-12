@@ -706,3 +706,50 @@ body {
 .goBackBtn:hover {
   background-color: #ca5f5f;
 }
+
+.discoverMoreContainer {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.carrollContainer,
+.austenContainer,
+.dickensContainer,
+.hardyContainer {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 40rem;
+  opacity: 0.7;
+}
+
+.carrollContainer {
+  background-image: url("assets/images/lewisCarroll.jpg");
+}
+
+.austenContainer {
+  background-image: url("assets/images/janeAusten.jpg");
+}
+
+.dickensContainer {
+  background-image: url("assets/images/charlesDickens.jpg");
+}
+
+.hardyContainer {
+  background-image: url("assets/images/thomasHardy.jpg");
+}
+
+.discoverMoreTitle {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 6rem;
+  color: #fefefe;
+  line-height: 1000px;
+  text-align: center;
+}
+
+.discoverMoreSubtitle {
+  margin-top: 4rem;
+  font-family: "Gantari", sans-serif;
+  font-weight: 100;
+}

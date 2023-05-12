@@ -9,15 +9,23 @@ import BookSearch from "./components/BookSearch";
 import FavouritesBooks from "./components/FavouriteBooks";
 import LoginPage from "./components/LoginPage";
 import TopScrollBtn from "./components/TopScrollBtn";
-import { getBooksFetch } from "./redux/actions";
+import { getAustenFetch, getBooksFetch, getCarrollFetch, getDickensFetch, getHardyFetch } from "./redux/actions";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import BookDetails from "./components/BookDetails";
+import CarrollPage from "./components/CarrollPage";
+import AustenPage from "./components/AustenPage";
+import DickensPage from "./components/DickensPage";
+import HardyPage from "./components/HardyPage";
 
 function App() {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooksFetch());
+    dispatch(getCarrollFetch());
+    dispatch(getAustenFetch());
+    dispatch(getDickensFetch());
+    dispatch(getHardyFetch());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -26,6 +34,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/carroll" element={<CarrollPage />} />
+          <Route path="/austen" element={<AustenPage />} />
+          <Route path="/dickens" element={<DickensPage />} />
+          <Route path="/hardy" element={<HardyPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />

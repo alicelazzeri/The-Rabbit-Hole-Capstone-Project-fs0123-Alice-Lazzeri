@@ -42,7 +42,7 @@ const BookDetails = () => {
 
               <p className="detailsPublisher text-center text-lg-start">{book.publisher}</p>
               <p className="detailsDescription text-center text-lg-start">
-                {`${book.saleInfo?.retailPrice}€` || "No price available for this book"}
+                {`${book.saleInfo?.retailPrice?.amount}€` || "No price available for this book"}
               </p>
               <p className="detailsDescription text-center text-lg-start">
                 {book.description || "No description available for this book"}
@@ -57,7 +57,7 @@ const BookDetails = () => {
                 <Link to={book.saleInfo?.buyLink} target="_blank">
                   <button className="buyBtn mt-3">
                     Buy book
-                    <BsFillBagHeartFill className="ms-2 mb-2" />
+                    <BsFillBagHeartFill className="ms-2 mb-1" />
                   </button>
                 </Link>
 

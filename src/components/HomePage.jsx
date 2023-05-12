@@ -7,6 +7,7 @@ import hardy from "../assets/images/hardy.png";
 import NewsLetter from "./NewsLetter";
 import About from "./About";
 import NewReleases from "./NewReleases";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [index, setIndex] = useState(0);
@@ -27,7 +28,9 @@ const HomePage = () => {
                 Lewis Carroll, <cite title="Source Title">Alice's Adventures in Wonderland</cite>
               </footer>
             </blockquote>
-            <button className="carouselBtn"> Discover more</button>
+            <Link to="/carroll">
+              <button className="carouselBtn"> Discover more</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -43,7 +46,9 @@ const HomePage = () => {
                 Jane Austen, <cite title="Source Title">Pride and Prejudice</cite>
               </footer>
             </blockquote>
-            <button className="carouselBtn"> Discover more</button>
+            <Link to="/austen">
+              <button className="carouselBtn"> Discover more</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -59,7 +64,9 @@ const HomePage = () => {
                 Charles Dickens, <cite title="Source Title">David Copperfield</cite>
               </footer>
             </blockquote>
-            <button className="carouselBtn"> Discover more</button>
+            <Link to="/dickens">
+              <button className="carouselBtn"> Discover more</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -75,7 +82,9 @@ const HomePage = () => {
                 Thomas Hardy, <cite title="Source Title">Far from the Madding Crowd</cite>
               </footer>
             </blockquote>
-            <button className="carouselBtn"> Discover more</button>
+            <Link to="/hardy">
+              <button className="carouselBtn"> Discover more</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
