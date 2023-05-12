@@ -8,7 +8,6 @@ const NewReleases = () => {
         <h1 className="releasesTitle text-center text-md-start">Newly Released</h1>
         <p className="releasesBody text-center text-md-start">Discover the newly released books of this month!</p>
       </div>
-
       <HomeCard />
     </>
   );
