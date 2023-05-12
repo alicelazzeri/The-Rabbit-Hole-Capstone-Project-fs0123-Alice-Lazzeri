@@ -27,13 +27,13 @@ const HomeCard = () => {
                   <p className="bookPrice">{book.publisher}</p>
                 </Card.Text>
                 <div className="d-flex flex-wrap justify-content-around align-items-center mt-4">
-                  <Link to="/details">
+                  <Link to={`/details/${book.id}`}>
                     <button className="detailsBtn">
                       Details
                       <HiPlusCircle className="ms-2 mb-1" />
                     </button>
                   </Link>
-                  <Link to={`https://${book.saleInfo?.buyLink}`} target="_blank">
+                  <Link to={book.saleInfo?.buyLink} target="_blank">
                     <button className="buyBtn">
                       Buy book
                       <BsFillBagHeartFill className="ms-2 mb-2" />

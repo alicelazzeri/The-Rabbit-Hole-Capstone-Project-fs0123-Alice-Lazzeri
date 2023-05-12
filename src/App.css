@@ -449,7 +449,8 @@ body {
 
 .detailsBtn,
 .buyBtn,
-.addToFavBtn {
+.addToFavBtn,
+.goBackBtn {
   color: #fefefe;
   border: none;
   padding-top: 0.5rem;
@@ -637,4 +638,71 @@ body {
 
 .homeCard {
   margin-top: -5rem;
+}
+
+.detailsContainer {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.detailsCard {
+  border: 5px solid #5a2727;
+  padding-inline: 3rem;
+  padding-top: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 5px 4px 16px 0px #000000;
+}
+
+.bookCover {
+  border: 5px double #1c3513;
+  box-shadow: 5px 4px 16px 0px #000000;
+  object-fit: cover;
+}
+
+.detailsTitle {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 2.5rem;
+  color: #1c3513;
+}
+
+.detailsSubtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Gantari", sans-serif;
+  color: #1c3513;
+}
+
+.detailsAuthor {
+  font-size: 1.3rem;
+  font-weight: 100;
+  font-style: italic;
+  font-family: "Gantari", sans-serif;
+  color: #000000;
+}
+
+.detailsPublisher {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: "Gantari", sans-serif;
+}
+
+.detailsDescription {
+  font-size: 1.2rem;
+  font-weight: 100;
+  font-family: "Gantari", sans-serif;
+}
+
+.buttonsContainer {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.goBackBtn {
+  background-color: #5a2727;
+  transition: background-color 0.5s ease;
+}
+
+.goBackBtn:hover {
+  background-color: #ca5f5f;
 }

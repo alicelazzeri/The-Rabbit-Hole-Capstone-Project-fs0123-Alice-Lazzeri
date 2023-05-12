@@ -2,7 +2,7 @@ import { GET_BOOKS } from "../actions";
 
 const initialState = {
   content: {
-    data: [], // array di oggetti libro
+    data: [],
     loading: false,
     error: null,
   },
@@ -15,9 +15,13 @@ const homePageReducer = (state = initialState, action) => {
         return {
           id: book.id,
           title: book.volumeInfo.title,
+          subtitle: book.volumeInfo.subtitle,
           authors: book.volumeInfo.authors?.join(", "),
           publisher: book.volumeInfo.publisher,
           imageLinks: book.volumeInfo.imageLinks,
+          publishedDate: book.volumeInfo.publishedDate,
+          description: book.volumeInfo.description,
+          retailPrice: book.saleInfo,
         };
       });
 
@@ -29,6 +33,7 @@ const homePageReducer = (state = initialState, action) => {
           error: null,
         },
       };
+
     default:
       return state;
   }

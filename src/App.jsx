@@ -29,7 +29,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />
-          <Route path="/details" element={<BookDetails />} />
+          <Route path="/details/:id" element={<BookDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <RabbitFooter />
