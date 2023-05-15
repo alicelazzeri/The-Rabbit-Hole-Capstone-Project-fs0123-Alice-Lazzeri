@@ -5,10 +5,10 @@ const LoginForm = () => {
   return (
     <div className="formContainer">
       <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
-        <Form.Control className="loginInput" type="email" placeholder="name@example.com" />
+        <Form.Control required className="loginInput" type="email" placeholder="name@example.com" />
       </FloatingLabel>
       <FloatingLabel controlId="floatingPassword" label="Password">
-        <Form.Control className="loginInput" type="password" placeholder="Password" />
+        <Form.Control required className="loginInput" type="password" placeholder="Password" />
       </FloatingLabel>
     </div>
   );

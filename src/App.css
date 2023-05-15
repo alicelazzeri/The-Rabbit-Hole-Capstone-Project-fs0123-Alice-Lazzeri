@@ -16,6 +16,15 @@ body {
   text-align: center;
 }
 
+.transition {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.transition.visible {
+  opacity: 1;
+}
+
 #navBar {
   background-color: #5a2727;
   position: fixed;
@@ -225,6 +234,54 @@ body {
   margin-bottom: 2rem;
 }
 
+.modalHeader {
+  font-family: "Berkshire Swash", cursive;
+  color: #1c3513;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+.modalLogo {
+  margin-right: 1rem;
+}
+
+.modalBodyContainer {
+  margin-inline: 1rem;
+  margin-top: 1rem;
+}
+
+.modalSubtitle {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.modalIcon {
+  margin-right: 1rem;
+}
+
+.modalBody {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 100;
+  margin-top: 1rem;
+}
+
+.modalBtn {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-inline: 1rem;
+  border-radius: 5px;
+  background-color: #5a2727;
+  transition: background-color 0.5 ease;
+}
+
+.modalBtn:hover {
+  background-color: #ca5f5f;
+}
+
 .aboutContainer {
   padding-inline: 3rem;
 }
@@ -338,6 +395,10 @@ body {
 
 .loginInput {
   min-width: 400px;
+}
+
+.registerInput {
+  max-width: 200px;
 }
 
 .forgotPassword {
@@ -629,6 +690,7 @@ body {
   font-size: 1.5rem;
   font-weight: 100;
   font-family: "Gantari", sans-serif;
+  margin-bottom: -2.5rem;
 }
 
 .homeCardContainer {

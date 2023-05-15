@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
+// import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("book");
   const [query, setQuery] = useState("");
   const handleSubmit = e => {
     e.preventDefault();
-    // if (filtro === "book") {
-    //   dispatch(getQueryJobFetch("book", query));
-    // } else if (filtro === "author") {
-    //   dispatch(getQueryJobFetch("author", query));
-    // } else if (filtro === "category") {
-    //   dispatch(getQueryJobFetch("category", query));
+    // if (filter === "book") {
+    //   dispatch(bookQueryFetch("book", query));
+    // } else if (filter === "author") {
+    //   dispatch(bookQueryFetch("author", query));
+    // } else if (filter === "category") {
+    //   dispatch(bookQueryFetch("category", query));
     // }
-    // console.log("submit");
-    // navigate("/jobs");
+    console.log("submit");
+    navigate("/jobs");
   };
 
   return (

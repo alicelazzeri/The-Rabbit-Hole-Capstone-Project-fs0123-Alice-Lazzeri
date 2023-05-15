@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import carroll from "../assets/images/carroll.jpg";
 import austen from "../assets/images/austen.jpg";
@@ -10,14 +10,19 @@ import NewReleases from "./NewReleases";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
+  const [index, setIndex] = useState(0);
   const handleSelect = selectedIndex => {
     setIndex(selectedIndex);
   };
 
   return (
-    <>
+    <div className={`homeContainer ${visible ? "transition visible" : ""}`}>
       <Carousel id="carouselHero" activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img className="d-block w-100 carouselPic" src={carroll} alt="Slide pic" width={500} height={600} />
@@ -91,7 +96,7 @@ const HomePage = () => {
       <About />
       <NewReleases />
       <NewsLetter />
-    </>
+    </div>
   );
 };
 

@@ -4,22 +4,31 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
+import logo from "../assets/images/logo.png";
+import { BsFillBookmarkCheckFill } from "react-icons/bs";
 
 const SubmissionModal = props => {
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Modal heading</Modal.Title>
+        <Modal.Title className="modalHeader" id="contained-modal-title-vcenter">
+          <img className="modalLogo" src={logo} alt="Logo pic" width={70} height={70} />
+          The Rabbit Hole
+        </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <h4>Form submitted successfully</h4>
-        <p>
-          Thank you for joining the club! Your registration will be confirmed automatically by e-mail to the given
-          e-mail address.
+      <Modal.Body className="modalBodyContainer">
+        <h4 className="modalSubtitle">
+          <BsFillBookmarkCheckFill className="modalIcon" />
+          Form submitted successfully!
+        </h4>
+        <p className="modalBody">
+          Thank you for joining the club! Your registration will be confirmed automatically to the given e-mail address.
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button className="modalBtn" onClick={props.onHide}>
+          Close
+        </Button>
       </Modal.Footer>
     </Modal>
   );
@@ -33,6 +42,8 @@ const NewsletterForm = () => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
+    } else {
+      setModalShow(true);
     }
     setValidated(true);
   };
@@ -65,7 +76,7 @@ const NewsletterForm = () => {
         />
       </FormGroup>
       <div className="text-align-center">
-        <button onClick={() => setModalShow(true)} className="carouselBtn submitBtn" type="submit">
+        <button className="carouselBtn submitBtn" type="submit">
           Join the newsletter
         </button>
       </div>

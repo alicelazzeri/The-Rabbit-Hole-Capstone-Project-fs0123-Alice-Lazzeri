@@ -1,6 +1,7 @@
 import { Container, Navbar, Nav, Offcanvas } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import { BsFillBookmarkHeartFill, BsFillSearchHeartFill, BsPersonCircle } from "react-icons/bs";
+import { BiBookHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -49,12 +50,20 @@ const NavBar = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 gap-4">
                   <Nav.Link className="navLinks">
+                    <Link className="navLink" to="/register" onClick={() => setShowOffcanvas(false)}>
+                      {""}
+                      <BiBookHeart className="me-2" />
+                      Register
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link className="navLinks">
                     <Link className="navLink" to="/login" onClick={() => setShowOffcanvas(false)}>
                       {""}
                       <BsPersonCircle className="me-2" />
                       Log in
                     </Link>
                   </Nav.Link>
+
                   <Nav.Link className="navLinks">
                     <Link className="navLink" to="/search" onClick={() => setShowOffcanvas(false)}>
                       {""}

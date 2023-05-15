@@ -4,7 +4,6 @@ import { getCarrollFetch } from "../redux/actions";
 import CarouselCard from "./CarouselCard";
 
 const CarrollPage = () => {
-  // const books = useSelector(state => state.home.content?.data);
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCarrollFetch());

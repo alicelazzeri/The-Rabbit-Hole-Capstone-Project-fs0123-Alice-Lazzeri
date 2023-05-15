@@ -17,6 +17,7 @@ import CarrollPage from "./components/CarrollPage";
 import AustenPage from "./components/AustenPage";
 import DickensPage from "./components/DickensPage";
 import HardyPage from "./components/HardyPage";
+import RegistrationPage from "./components/RegistrationPage";
 
 function App() {
   let dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
     dispatch(getAustenFetch());
     dispatch(getDickensFetch());
     dispatch(getHardyFetch());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -39,6 +41,7 @@ function App() {
           <Route path="/dickens" element={<DickensPage />} />
           <Route path="/hardy" element={<HardyPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />
           <Route path="/details/:id" element={<BookDetails />} />

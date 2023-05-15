@@ -5,8 +5,10 @@ const NewReleases = () => {
     <>
       <div className="releasesContainer">
         <div className="divider"></div>
-        <h1 className="releasesTitle text-center text-md-start">Newly Released</h1>
-        <p className="releasesBody text-center text-md-start">Discover the newly released books of this month!</p>
+        <h1 className="releasesTitle text-center text-md-start">Recently viewed</h1>
+        <p className="releasesBody text-center text-md-start">
+          Check again the books you recently viewed from our collection!
+        </p>
       </div>
       <HomeCard />
     </>
