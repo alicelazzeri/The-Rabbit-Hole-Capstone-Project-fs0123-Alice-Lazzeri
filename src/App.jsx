@@ -9,7 +9,14 @@ import BookSearch from "./components/BookSearch";
 import FavouritesBooks from "./components/FavouriteBooks";
 import LoginPage from "./components/LoginPage";
 import TopScrollBtn from "./components/TopScrollBtn";
-import { getAustenFetch, getBooksFetch, getCarrollFetch, getDickensFetch, getHardyFetch } from "./redux/actions";
+import {
+  getAustenFetch,
+  getBooksFetch,
+  getCarrollFetch,
+  getDickensFetch,
+  getHardyFetch,
+  getQueryBookFetch,
+} from "./redux/actions";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import BookDetails from "./components/BookDetails";
@@ -27,6 +34,7 @@ function App() {
     dispatch(getAustenFetch());
     dispatch(getDickensFetch());
     dispatch(getHardyFetch());
+    dispatch(getQueryBookFetch());
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

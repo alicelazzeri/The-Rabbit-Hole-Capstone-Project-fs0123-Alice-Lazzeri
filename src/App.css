@@ -336,21 +336,22 @@ body {
   max-width: 1000px;
   min-width: 600px;
   padding-inline: 2rem;
-  height: 60px;
+  height: 70px;
 }
 
 .inputBar {
   font-size: 1.3rem;
   font-weight: 100;
   font-family: "Gantari", sans-serif;
+  padding-block: 0.6rem;
 }
 
 .searchBtn {
   font-family: "Gantari", sans-serif;
-  background-color: #1c3513;
-  color: #fefefe;
-  padding-inline: 10rem;
-  font-size: 1.3rem;
+  background-color: #5a2727 !important;
+  color: #fefefe !important;
+  padding-block: 0.6rem !important;
+  font-size: 1.3rem !important;
 }
 
 /* 
@@ -369,6 +370,29 @@ body {
 
 .dropdownItem:hover {
   font-weight: bold;
+}
+
+.searchButton {
+  border: none;
+  background-color: #1c3513;
+  color: #fefefe;
+  font-family: "Gantari", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+  border-radius: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.searchButton:hover {
+  background-color: #5e8152;
+}
+
+.inputGroupAppend {
+  display: flex;
+  align-items: center;
+  margin-right: -8px;
 }
 
 .loginContainer {

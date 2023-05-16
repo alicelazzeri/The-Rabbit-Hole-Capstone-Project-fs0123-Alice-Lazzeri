@@ -1,8 +1,17 @@
 import { BsFillSearchHeartFill } from "react-icons/bs";
 import SearchInput from "./SearchInput";
 import SearchCard from "./SearchCard";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getQueryBookFetch } from "../redux/actions";
 
 const BookSearch = () => {
+  const [isSearchPerformed, setIsSearchPerformed] = useState(false);
+  let dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getQueryBookFetch());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <div className="searchContainer">

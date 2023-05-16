@@ -10,7 +10,9 @@ const NewReleases = () => {
           Check again the books you recently viewed from our collection!
         </p>
       </div>
-      <HomeCard />
+      <div>
+        <HomeCard />
+      </div>
     </>
   );
 };

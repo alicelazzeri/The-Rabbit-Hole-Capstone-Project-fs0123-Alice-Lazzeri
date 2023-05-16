@@ -25,7 +25,7 @@ const BookDetails = () => {
         <Card.Body>
           <div className="detailsHero d-flex flex-column flex-lg-row align-items-center align-items-lg-start">
             <img
-              className="bookCover"
+              className="bookCover mb-5"
               src={book.imageLinks?.thumbnail || unavailableImage}
               alt="Book cover"
               width={400}
@@ -42,7 +42,7 @@ const BookDetails = () => {
 
               <p className="detailsPublisher text-center text-lg-start">{book.publisher}</p>
               <p className="detailsDescription text-center text-lg-start">
-                {`${book.saleInfo?.retailPrice?.amount}€` || "No price available for this book"}
+                {`${book.retailPrice}€` || "No price available for this book"}
               </p>
               <p className="detailsDescription text-center text-lg-start">
                 {book.description || "No description available for this book"}

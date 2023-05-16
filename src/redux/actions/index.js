@@ -5,6 +5,7 @@ export const GET_DICKENS = "GET_DICKENS";
 export const GET_HARDY = "GET_HARDY";
 export const REGISTER_USER_SUCCESS = "REGISTER_USER_SUCCESS";
 export const REGISTER_USER_FAILURE = "REGISTER_USER_FAILURE";
+export const GET_BOOK_QUERY = "GET_BOOK_QUERY";
 
 export const getBooksAction = data => {
   return { type: GET_BOOKS, payload: data };
@@ -32,6 +33,10 @@ export const registerSuccessAction = data => {
 
 export const registerFailureAction = errorMsg => {
   return { type: REGISTER_USER_FAILURE, payload: errorMsg };
+};
+
+export const getQueryBookAction = data => {
+  return { type: GET_BOOK_QUERY, payload: data };
 };
 
 export const getBooksFetch = () => {
@@ -128,25 +133,18 @@ export const registerFetch = userData => {
   };
 };
 
-// export const getQueryJobFetch = (parametro, query) => {
-//   return async dispatch => {
-//     const URL = `https://strive-benchmark.herokuapp.com/api/jobs?${parametro}=${query}&limit=30`;
-//     const headers = {
-//       headers: {
-//         "Access-Control-Allow-Origin": "*",
-//         Authorization:
-//           "Bearer " +
-//           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNlNDY5ZjdhYWQ5OTAwMTQ0ZjBjOTgiLCJpYXQiOjE2ODE4MDI5MzUsImV4cCI6MTY4MzAxMjUzNX0.2Lfp7xI-o5SiSeV-QyDpMq82KC7otp9TJB1rtGH22b0",
-//       },
-//     };
-//     try {
-//       let risposta = await fetch(URL, headers);
-//       if (risposta.ok) {
-//         let dato = await risposta.json();
-//         dispatch(getQueryJobAction(dato.data));
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const getQueryBookFetch = (query, filter) => {
+  const api = `https://www.googleapis.com/books/v1/volumes`;
+  return async dispatch => {
+    const URL = `${api}?q=${query}${filter ? `+${filter}` : ""}`;
+    try {
+      let response = await fetch(URL);
+      if (response.ok) {
+        let data = await response.json();
+        dispatch(getQueryBookAction(data));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
