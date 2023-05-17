@@ -25,6 +25,7 @@ import AustenPage from "./components/AustenPage";
 import DickensPage from "./components/DickensPage";
 import HardyPage from "./components/HardyPage";
 import RegistrationPage from "./components/RegistrationPage";
+import SearchDetails from "./components/SearchDetails";
 
 function App() {
   let dispatch = useDispatch();
@@ -53,6 +54,7 @@ function App() {
           <Route path="/search" element={<BookSearch />} />
           <Route path="/favourites" element={<FavouritesBooks />} />
           <Route path="/details/:id" element={<BookDetails />} />
+          <Route path="/search-details/:id" element={<SearchDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <RabbitFooter />

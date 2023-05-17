@@ -5,9 +5,9 @@ import HomeButton from "./HomeButton";
 import unavailableImage from "../assets/images/unavailable.png";
 import { BsFillBagHeartFill, BsFillBookmarkHeartFill, BsHeartArrow } from "react-icons/bs";
 
-const BookDetails = () => {
+const SearchDetails = () => {
   const { id } = useParams();
-  const books = useSelector(state => state.home.content?.data);
+  const books = useSelector(state => state.search.content?.data);
   const book = books.find(book => book.id === id);
 
   if (!book) {
@@ -80,4 +80,4 @@ const BookDetails = () => {
   );
 };
 
-export default BookDetails;
+export default SearchDetails;

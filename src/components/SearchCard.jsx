@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
 
-const SearchCard = ({ setShowBooks }) => {
+const SearchCard = () => {
   const search = useSelector(state => state.search.content?.data);
 
   return (
@@ -29,7 +29,7 @@ const SearchCard = ({ setShowBooks }) => {
                   <p className="bookPrice">{book.publisher}</p>
                 </Card.Text>
                 <div className="d-flex flex-wrap justify-content-around align-items-center mt-4">
-                  <Link to={`/details/${book.id}`}>
+                  <Link to={`/search-details/${book.id}`}>
                     <button className="detailsBtn">
                       Details
                       <HiPlusCircle className="ms-2 mb-1" />
