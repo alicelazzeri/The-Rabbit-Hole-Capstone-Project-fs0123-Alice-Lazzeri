@@ -136,7 +136,8 @@ export const registerFetch = userData => {
 export const getQueryBookFetch = (query, filter) => {
   const api = `https://www.googleapis.com/books/v1/volumes`;
   return async dispatch => {
-    const URL = `${api}?q=${query}${filter ? `+${filter}` : ""}`;
+    const langRestrictParam = "&langRestrict=en";
+    const URL = `${api}?q=${query}${filter ? `+${filter}` : ""}${langRestrictParam}`;
     try {
       let response = await fetch(URL);
       if (response.ok) {

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getDickensFetch } from "../redux/actions";
 import CarouselCard from "./CarouselCard";
+import HomeButton from "./HomeButton";
 
 const DickensPage = () => {
   let dispatch = useDispatch();
@@ -20,6 +21,7 @@ const DickensPage = () => {
         </h3>
       </div>
       <CarouselCard />
+      <HomeButton />
     </>
   );
 };

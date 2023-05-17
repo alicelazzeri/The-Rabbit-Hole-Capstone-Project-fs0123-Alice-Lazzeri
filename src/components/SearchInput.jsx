@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getQueryBookFetch } from "../redux/actions";
 import { BsSearchHeart } from "react-icons/bs";
 
-const SearchInput = () => {
+const SearchInput = ({ setSearchText, setShowResults }) => {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState("book");
   const [query, setQuery] = useState("");
@@ -19,6 +19,8 @@ const SearchInput = () => {
     } else if (filter === "category") {
       dispatch(getQueryBookFetch("category", query));
     }
+    setSearchText(query);
+    setShowResults(true);
   };
 
   return (

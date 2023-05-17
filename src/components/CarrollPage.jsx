@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getCarrollFetch } from "../redux/actions";
 import CarouselCard from "./CarouselCard";
+import HomeButton from "./HomeButton";
 
 const CarrollPage = () => {
   let dispatch = useDispatch();
@@ -20,6 +21,7 @@ const CarrollPage = () => {
         </h3>
       </div>
       <CarouselCard />
+      <HomeButton />
     </>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAustenFetch } from "../redux/actions";
 import CarouselCard from "./CarouselCard";
+import HomeButton from "./HomeButton";
 
 const AustenPage = () => {
   let dispatch = useDispatch();
@@ -20,6 +21,7 @@ const AustenPage = () => {
         </h3>
       </div>
       <CarouselCard />
+      <HomeButton />
     </>
   );
 };
