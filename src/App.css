@@ -315,7 +315,7 @@ body {
   color: #1c3513;
 }
 .searchContainer {
-  margin-top: 10rem;
+  margin-top: 12rem;
 }
 
 .bodySearch {
@@ -328,8 +328,8 @@ body {
 
 .inputContainer {
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .searchInput {
@@ -496,6 +496,7 @@ body {
 .resultsTitle {
   font-weight: 100;
   font-family: "Gantari", sans-serif;
+  margin-bottom: 5rem;
 }
 
 .bookCard {

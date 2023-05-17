@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
 
-const SearchCard = () => {
+const SearchCard = ({ setShowBooks }) => {
   const search = useSelector(state => state.search.content?.data);
 
   return (

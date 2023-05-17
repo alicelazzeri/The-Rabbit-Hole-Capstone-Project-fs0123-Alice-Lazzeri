@@ -8,6 +8,7 @@ import { getQueryBookFetch } from "../redux/actions";
 const BookSearch = () => {
   const [searchText, setSearchText] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const [showBooks, setShowBooks] = useState(false);
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(getQueryBookFetch());
@@ -22,9 +23,9 @@ const BookSearch = () => {
         </h1>
         <p className="bodySearch">Make your own search by book, author or category.</p>
       </div>
-      <SearchInput setSearchText={setSearchText} setShowResults={setShowResults} />
+      <SearchInput setSearchText={setSearchText} setShowResults={setShowResults} setShowBooks={setShowBooks} />
       {showResults && <h4 className="resultsTitle">Your search for "{searchText}" returned the following results:</h4>}
-      <SearchCard />
+      {showBooks && <SearchCard />}
     </>
   );
 };
