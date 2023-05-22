@@ -894,3 +894,14 @@ body {
 .animating {
   animation: fadeInOut 0.5s ease, fedeOutIn 0.5s ease;
 }
+
+.noFavTitle {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 3rem;
+}
+
+.noFavBody {
+  font-family: "Gantari", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+}

@@ -6,7 +6,7 @@ import unavailableImage from "../assets/images/unavailable.png";
 
 const FavTable = () => {
   const dispatch = useDispatch();
-  const favourites = useSelector(state => state.favourites.content);
+  const favourites = useSelector(state => state.favourites.content?.data);
   console.log(favourites);
 
   if (!favourites) {
@@ -30,8 +30,8 @@ const FavTable = () => {
         </tr>
       </thead>
       <tbody>
-        {favourites.map((book, index) => (
-          <tr key={index} id={book.id} className="tableRow">
+        {favourites.map((book, i) => (
+          <tr key={i} id={book.id} className="tableRow">
             <td className="text-center align-middle">
               <img
                 className="favPic rounded-circle"
@@ -61,7 +61,3 @@ const FavTable = () => {
 };
 
 export default FavTable;
-
-//IoTrashBin
-
-//TbTrashFilled
