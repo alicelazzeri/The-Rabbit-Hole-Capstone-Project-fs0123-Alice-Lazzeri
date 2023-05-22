@@ -23,6 +23,7 @@ const searchReducer = (state = initialState, action) => {
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
           buyLink: book.saleInfo.buyLink,
+          previewLink: book.volumeInfo.previewLink,
         };
       });
 

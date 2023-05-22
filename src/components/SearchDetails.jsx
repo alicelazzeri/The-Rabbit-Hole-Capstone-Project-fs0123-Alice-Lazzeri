@@ -62,7 +62,12 @@ const SearchDetails = () => {
                     <BsHeartArrow className="ms-2 mb-1" />
                   </button>
                 </Link>
-                <Link to={book.buyLink} target="_blank" rel="noreferrer" className="buyBtn mt-3">
+                <Link
+                  to={book.buyLink ? book.buyLink : book.previewLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="buyBtn mt-3"
+                >
                   Buy book
                   <BsFillBagHeartFill className="ms-2 mb-2" />
                 </Link>

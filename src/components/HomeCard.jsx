@@ -35,7 +35,12 @@ const HomeCard = () => {
                       <HiPlusCircle className="ms-2 mb-1" />
                     </button>
                   </Link>
-                  <Link to={book.buyLink} target="_blank" rel="noreferrer" className="buyBtn">
+                  <Link
+                    to={book.buyLink ? book.buyLink : book.previewLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="buyBtn"
+                  >
                     Buy book
                     <BsFillBagHeartFill className="ms-2 mb-2" />
                   </Link>
