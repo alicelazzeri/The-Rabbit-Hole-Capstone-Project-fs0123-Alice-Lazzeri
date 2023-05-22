@@ -3,13 +3,16 @@ import { HiArrowCircleUp } from "react-icons/hi";
 
 const TopScrollBtn = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > 150) {
       setIsVisible(true);
+      setIsAnimating(true);
     } else {
       setIsVisible(false);
+      setIsAnimating(false);
     }
   };
 
@@ -23,7 +26,7 @@ const TopScrollBtn = () => {
 
   return (
     <button
-      className={`scrollBtn scroll-to-top-button ${isVisible ? "visible" : "hidden"}`}
+      className={`scrollBtn scroll-to-top-button ${isVisible ? "visible" : "hidden"} ${isAnimating ? "animating" : ""}`}
       onClick={handleScrollToTop}
     >
       <HiArrowCircleUp />
@@ -32,4 +35,3 @@ const TopScrollBtn = () => {
 };
 
 export default TopScrollBtn;
-//BsHeartArrow

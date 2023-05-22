@@ -22,10 +22,12 @@ const BookSearch = () => {
           Search Page
         </h1>
         <p className="bodySearch">Make your own search by book, author or category.</p>
+        <SearchInput setSearchText={setSearchText} setShowResults={setShowResults} setShowBooks={setShowBooks} />
+        {showResults && (
+          <h4 className="resultsTitle">Your search for "{searchText}" returned the following results:</h4>
+        )}
+        {showBooks && <SearchCard />}
       </div>
-      <SearchInput setSearchText={setSearchText} setShowResults={setShowResults} setShowBooks={setShowBooks} />
-      {showResults && <h4 className="resultsTitle">Your search for "{searchText}" returned the following results:</h4>}
-      {showBooks && <SearchCard />}
     </>
   );
 };

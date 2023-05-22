@@ -1,7 +1,18 @@
 import Table from "react-bootstrap/Table";
 import { HiTrash } from "react-icons/hi2";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteFavouritesAction } from "../redux/actions";
+import unavailableImage from "../assets/images/unavailable.png";
 
 const FavTable = () => {
+  const dispatch = useDispatch();
+  const favourites = useSelector(state => state.favourites.content);
+  console.log(favourites);
+
+  if (!favourites) {
+    return null;
+  }
+
   return (
     <Table>
       <thead className="tableHead">
@@ -19,132 +30,31 @@ const FavTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Wuthering Heights</td>
-          <td className="text-center align-middle">Emily Brontë</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Jacob</td>
-          <td className="text-center align-middle">Thornton</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Jacob</td>
-          <td className="text-center align-middle">Thornton</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Wuthering Heights</td>
-          <td className="text-center align-middle">Emily Brontë</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Wuthering Heights</td>
-          <td className="text-center align-middle">Emily Brontë</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Wuthering Heights</td>
-          <td className="text-center align-middle">Emily Brontë</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
-        <tr className="tableRow">
-          <td className="text-center align-middle">
-            <img
-              className="favPic rounded-circle"
-              src="https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141199085.jpg"
-              alt="Book cover"
-              width={80}
-              height={80}
-            />
-          </td>
-          <td className="text-center align-middle">Wuthering Heights</td>
-          <td className="text-center align-middle">Emily Brontë</td>
-          <td className="text-center align-middle">
-            <button className="deleteBtn">
-              <HiTrash className="mb-1" />
-            </button>
-          </td>
-        </tr>
+        {favourites.map((book, index) => (
+          <tr key={index} id={book.id} className="tableRow">
+            <td className="text-center align-middle">
+              <img
+                className="favPic rounded-circle"
+                src={book.thumbnail || unavailableImage}
+                alt="Book cover"
+                width={80}
+                height={80}
+              />
+            </td>
+            <td className="text-center align-middle">{book.title}</td>
+            <td className="text-center align-middle">{book.authors}</td>
+            <td className="text-center align-middle">
+              <button
+                className="deleteBtn"
+                onClick={() => {
+                  dispatch(deleteFavouritesAction);
+                }}
+              >
+                <HiTrash className="mb-1" />
+              </button>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );

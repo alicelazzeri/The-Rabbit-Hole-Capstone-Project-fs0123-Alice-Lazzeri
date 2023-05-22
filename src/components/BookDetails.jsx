@@ -1,11 +1,13 @@
 import Card from "react-bootstrap/Card";
 import { Link, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HomeButton from "./HomeButton";
 import unavailableImage from "../assets/images/unavailable.png";
 import { BsFillBagHeartFill, BsFillBookmarkHeartFill, BsHeartArrow } from "react-icons/bs";
+import { addToFavouritesAction } from "../redux/actions";
 
 const BookDetails = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const books = useSelector(state => state.home.content?.data);
   const book = books.find(book => book.id === id);
@@ -46,7 +48,9 @@ const BookDetails = () => {
 
               <p className="detailsPublisher text-center text-lg-start">{book.publisher}</p>
               <p className="detailsDescription text-center text-lg-start">
-                {`${book.retailPrice}€` || "No price available for this book"}
+                {book.retailPrice
+                  ? `${book.retailPrice?.amount ? book.retailPrice.amount : book.retailPrice}€`
+                  : "No price available for this book"}
               </p>
               <p className="detailsDescription text-center text-lg-start">
                 {book.description || "No description available for this book"}
@@ -58,15 +62,18 @@ const BookDetails = () => {
                     <BsHeartArrow className="ms-2 mb-1" />
                   </button>
                 </Link>
-                <Link to={book.saleInfo?.buyLink} target="_blank">
-                  <button className="buyBtn mt-3">
-                    Buy book
-                    <BsFillBagHeartFill className="ms-2 mb-1" />
-                  </button>
+                <Link to={book.buyLink} target="_blank" rel="noreferrer" className="buyBtn mt-3">
+                  Buy book
+                  <BsFillBagHeartFill className="ms-2 mb-2" />
                 </Link>
 
                 <Link to="/favourites">
-                  <button className="addToFavBtn mt-3">
+                  <button
+                    onClick={() => {
+                      dispatch(addToFavouritesAction);
+                    }}
+                    className="addToFavBtn mt-3"
+                  >
                     Add to Favourites
                     <BsFillBookmarkHeartFill className="ms-2 mb-1" />
                   </button>

@@ -6,6 +6,8 @@ export const GET_HARDY = "GET_HARDY";
 export const REGISTER_USER_SUCCESS = "REGISTER_USER_SUCCESS";
 export const REGISTER_USER_FAILURE = "REGISTER_USER_FAILURE";
 export const GET_BOOK_QUERY = "GET_BOOK_QUERY";
+export const ADD_TO_FAVOURITES = "ADD_TO_FAVOURITES";
+export const DELETE_FAVOURITES = "DELETE_FAVOURITES";
 
 export const getBooksAction = data => {
   return { type: GET_BOOKS, payload: data };
@@ -37,6 +39,14 @@ export const registerFailureAction = errorMsg => {
 
 export const getQueryBookAction = data => {
   return { type: GET_BOOK_QUERY, payload: data };
+};
+
+export const addToFavouritesAction = data => {
+  return { type: ADD_TO_FAVOURITES, payload: data };
+};
+
+export const deleteFavouritesAction = data => {
+  return { type: DELETE_FAVOURITES, payload: data };
 };
 
 export const getBooksFetch = () => {

@@ -1,16 +1,13 @@
-import { GET_BOOK_QUERY } from "../actions";
+import { ADD_TO_FAVOURITES, DELETE_FAVOURITES } from "../actions";
 
 const initialState = {
-  content: {
-    data: [],
-    loading: false,
-    error: null,
+  favourites: {
+    content: [],
   },
 };
-
-const searchReducer = (state = initialState, action) => {
+const favouritesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_BOOK_QUERY:
+    case ADD_TO_FAVOURITES:
       const books = action.payload.items.map(book => {
         return {
           id: book.id,
@@ -22,22 +19,29 @@ const searchReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
-          buyLink: book.saleInfo.buyLink,
         };
       });
-
       return {
         ...state,
-        content: {
+        favourites: {
+          ...state.favourites,
+          content: [...state.favourites.content, action.payload],
           data: books,
           loading: false,
           error: null,
         },
       };
-
+    case DELETE_FAVOURITES:
+      return {
+        ...state,
+        favourites: {
+          ...state.favourites,
+          content: state.favourites.content.filter((_, i) => i !== action.payload),
+        },
+      };
     default:
       return state;
   }
 };
 
-export default searchReducer;
+export default favouritesReducer;

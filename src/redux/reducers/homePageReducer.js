@@ -22,6 +22,7 @@ const homePageReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
+          buyLink: book.saleInfo.buyLink,
         };
       });
 
@@ -45,6 +46,7 @@ const homePageReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
+          buyLink: book.saleInfo.buyLink,
         };
       });
 
@@ -68,6 +70,7 @@ const homePageReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
+          buyLink: book.saleInfo.buyLink,
         };
       });
 
@@ -92,6 +95,7 @@ const homePageReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
+          buyLink: book.saleInfo.buyLink,
         };
       });
 
@@ -116,6 +120,7 @@ const homePageReducer = (state = initialState, action) => {
           publishedDate: book.volumeInfo.publishedDate,
           description: book.volumeInfo.description,
           retailPrice: book.saleInfo.retailPrice,
+          buyLink: book.saleInfo.buyLink,
         };
       });
 

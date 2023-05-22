@@ -316,6 +316,7 @@ body {
 }
 .searchContainer {
   margin-top: 12rem;
+  margin-bottom: 17rem;
 }
 
 .bodySearch {
@@ -336,6 +337,7 @@ body {
   max-width: 1000px;
   min-width: 600px;
   padding-inline: 2rem;
+
   height: 70px;
 }
 
@@ -504,7 +506,6 @@ body {
   border: none;
   transition: box-shadow 0.5s ease;
   background-color: #8aa78997;
-  border: 5px double #1c3513;
 }
 
 .bookCard:hover {
@@ -559,12 +560,14 @@ body {
 }
 
 .buyBtn {
+  text-decoration: none;
   background-color: #1c3513;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .buyBtn:hover {
   background-color: #5e8152;
+  color: #fefefe;
 }
 
 .addToFavBtn {
@@ -579,6 +582,10 @@ body {
 .cardsRow {
   margin-bottom: 5rem;
 }
+
+/* .cardsRow > div {
+  min-width: 300px;
+} */
 
 .scrollBtn {
   position: fixed;
@@ -739,6 +746,8 @@ body {
 .homeCardContainer {
   min-width: 500px;
   overflow-x: scroll;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
 }
 
 .homeCard {
@@ -857,4 +866,23 @@ body {
   margin-top: 4rem;
   font-family: "Gantari", sans-serif;
   font-weight: 100;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animating {
+  animation: fadeInOut 1s ease-in-out;
 }

@@ -1,15 +1,17 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { BsFillBagHeartFill, BsFillBookmarkHeartFill } from "react-icons/bs";
 import { HiPlusCircle } from "react-icons/hi2";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
+import { addToFavouritesAction } from "../redux/actions";
 
 const HomeCard = () => {
+  const dispatch = useDispatch();
   const books = useSelector(state => state.home.content?.data);
   return (
     <Container fluid className="homeCardContainer">
-      <Row className="cardsRow flex-nowrap">
+      <Row className="flex-nowrap">
         {books?.map(book => (
           <Col key={book.id} className="homeCard pb-2 px-5">
             <Card className="bookCard pb-4" style={{ width: "20rem", height: "47rem" }}>
@@ -33,15 +35,18 @@ const HomeCard = () => {
                       <HiPlusCircle className="ms-2 mb-1" />
                     </button>
                   </Link>
-                  <Link to={book.saleInfo?.buyLink} target="_blank">
-                    <button className="buyBtn">
-                      Buy book
-                      <BsFillBagHeartFill className="ms-2 mb-2" />
-                    </button>
+                  <Link to={book.buyLink} target="_blank" rel="noreferrer" className="buyBtn">
+                    Buy book
+                    <BsFillBagHeartFill className="ms-2 mb-2" />
                   </Link>
 
                   <Link to="/favourites">
-                    <button className="addToFavBtn mt-3">
+                    <button
+                      onClick={() => {
+                        dispatch(addToFavouritesAction);
+                      }}
+                      className="addToFavBtn mt-3"
+                    >
                       Add to Favourites
                       <BsFillBookmarkHeartFill className="ms-2 mb-2" />
                     </button>
