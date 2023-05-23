@@ -41,12 +41,12 @@ export const getQueryBookAction = data => {
   return { type: GET_BOOK_QUERY, payload: data };
 };
 
-export const addToFavouritesAction = data => {
-  return { type: ADD_TO_FAVOURITES, payload: data };
+export const addToFavouritesAction = book => {
+  return { type: ADD_TO_FAVOURITES, payload: book };
 };
 
-export const deleteFavouritesAction = data => {
-  return { type: DELETE_FAVOURITES, payload: data };
+export const deleteFavouritesAction = i => {
+  return { type: DELETE_FAVOURITES, payload: i };
 };
 
 export const getBooksFetch = () => {

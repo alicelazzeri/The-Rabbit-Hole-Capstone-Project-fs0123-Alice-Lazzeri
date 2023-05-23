@@ -47,7 +47,7 @@ const FavTable = () => {
               <button
                 className="deleteBtn"
                 onClick={() => {
-                  dispatch(deleteFavouritesAction);
+                  dispatch(deleteFavouritesAction(i));
                 }}
               >
                 <HiTrash className="mb-1" />

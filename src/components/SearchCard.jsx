@@ -50,7 +50,7 @@ const SearchCard = () => {
                   <Link to="/favourites">
                     <button
                       onClick={() => {
-                        dispatch(addToFavouritesAction);
+                        dispatch(addToFavouritesAction(book));
                       }}
                       className="addToFavBtn mt-3"
                     >
