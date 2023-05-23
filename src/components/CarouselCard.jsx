@@ -1,11 +1,13 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { BsFillBagHeartFill, BsFillBookmarkHeartFill } from "react-icons/bs";
 import { HiPlusCircle } from "react-icons/hi2";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
+import { addToFavouritesAction } from "../redux/actions";
 
 const CarouselCard = () => {
+  const dispatch = useDispatch();
   const books = useSelector(state => state.home.content?.data);
   return (
     <Container fluid className="homeCardContainer">
@@ -44,7 +46,12 @@ const CarouselCard = () => {
                   </Link>
 
                   <Link to="/favourites">
-                    <button className="addToFavBtn mt-3">
+                    <button
+                      onClick={() => {
+                        dispatch(addToFavouritesAction(book));
+                      }}
+                      className="addToFavBtn mt-3"
+                    >
                       Add to Favourites
                       <BsFillBookmarkHeartFill className="ms-2 mb-2" />
                     </button>
