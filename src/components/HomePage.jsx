@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import carroll from "../assets/images/carroll.jpg";
 import austen from "../assets/images/austen.jpg";
@@ -7,6 +7,7 @@ import hardy from "../assets/images/hardy.png";
 import NewsLetter from "./NewsLetter";
 import About from "./About";
 import NewReleases from "./NewReleases";
+import LoadingSpinner from "./LoadingSpinner";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -14,6 +15,15 @@ const HomePage = () => {
   const handleSelect = selectedIndex => {
     setIndex(selectedIndex);
   };
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="homeContainer">

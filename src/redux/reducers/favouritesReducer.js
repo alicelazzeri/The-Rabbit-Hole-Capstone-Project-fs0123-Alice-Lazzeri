@@ -21,6 +21,7 @@ const favouritesReducer = (state = initialState, action) => {
           retailPrice: book.saleInfo.retailPrice,
         };
       });
+
       return {
         ...state,
         favourites: {
