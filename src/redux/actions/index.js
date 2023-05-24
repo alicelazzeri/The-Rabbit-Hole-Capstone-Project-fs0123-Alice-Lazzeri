@@ -124,24 +124,24 @@ export const getHardyFetch = () => {
   };
 };
 
-export const registerFetch = userData => {
-  return async dispatch => {
-    const URL = `http://localhost:3001/users`;
-    try {
-      let response = await fetch(URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
-      if (response.ok) {
-        let data = await response.json();
-        dispatch(registerSuccessAction(data));
-      }
-    } catch (errorMsg) {
-      dispatch(registerFailureAction(errorMsg));
-    }
-  };
-};
+// export const registerFetch = userData => {
+//   return async dispatch => {
+//     const URL = `http://localhost:3001/users`;
+//     try {
+//       let response = await fetch(URL, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(userData),
+//       });
+//       if (response.ok) {
+//         let data = await response.json();
+//         dispatch(registerSuccessAction(data));
+//       }
+//     } catch (errorMsg) {
+//       dispatch(registerFailureAction(errorMsg));
+//     }
+//   };
+// };
 
 export const getQueryBookFetch = (query, filter) => {
   const api = `https://www.googleapis.com/books/v1/volumes`;

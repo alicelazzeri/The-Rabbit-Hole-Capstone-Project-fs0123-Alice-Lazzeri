@@ -356,13 +356,6 @@ body {
   font-size: 1.3rem !important;
 }
 
-/* 
-#input-group-dropdown-2.searchBtn {
-  background-color: #1c3513;
-  color: #fefefe;
-  padding-inline: 5rem;
-} */
-
 .dropdownItem {
   background-color: transparent;
   border: none;
@@ -1816,4 +1809,20 @@ body {
   96% {
     transform: rotateZ(-90deg);
   }
+}
+
+.formContainer {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.top-0 {
+  top: 0 !important;
+}
+
+.end-0 {
+  right: 0 !important;
 }
