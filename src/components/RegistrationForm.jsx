@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, FormGroup, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import LoadingSpinnerSmall from "./LoadingSpinnerSmall";
@@ -87,11 +87,7 @@ const RegistrationForm = () => {
           onChange={e => passwordChange(e.target.value)}
         />
       </FloatingLabel>
-      <div className="d-flex justify-content-between lign-items-center">
-        <FormGroup className="mb-3 mt-3 loginCheckbox">
-          <Form.Check label="Remember me" />
-        </FormGroup>
-      </div>
+
       {isLoading ? (
         <LoadingSpinnerSmall />
       ) : (
