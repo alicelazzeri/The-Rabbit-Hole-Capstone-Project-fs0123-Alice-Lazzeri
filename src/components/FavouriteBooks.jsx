@@ -6,7 +6,7 @@ import { addToFavouritesAction } from "../redux/actions";
 import LoadingSpinner from "./LoadingSpinner";
 
 const FavouritesBooks = () => {
-  const favourites = useSelector(state => state.favourites.content?.data);
+  const favourites = useSelector(state => state.favourites.favourites.content);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 

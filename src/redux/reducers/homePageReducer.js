@@ -3,7 +3,7 @@ import { GET_AUSTEN, GET_BOOKS, GET_CARROLL, GET_DICKENS, GET_HARDY } from "../a
 const initialState = {
   content: {
     data: [],
-    loading: false,
+    loading: true,
     error: null,
   },
 };

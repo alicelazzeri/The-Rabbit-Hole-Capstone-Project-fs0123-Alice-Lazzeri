@@ -3,7 +3,6 @@ import SearchInput from "./SearchInput";
 import SearchCard from "./SearchCard";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getQueryBookFetch } from "../redux/actions";
 import LoadingSpinner from "./LoadingSpinner";
 
 const BookSearch = () => {
@@ -11,17 +10,17 @@ const BookSearch = () => {
   const [showResults, setShowResults] = useState(false);
   const [showBooks, setShowBooks] = useState(false);
   let dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getQueryBookFetch());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getQueryBookFetch());
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await dispatch(getQueryBookFetch());
+
         setIsLoading(false);
       } catch (error) {
         console.log(error);

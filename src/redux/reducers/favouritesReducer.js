@@ -8,26 +8,24 @@ const initialState = {
 const favouritesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_FAVOURITES:
-      const books = action.payload.items.map(book => {
-        return {
-          id: book.id,
-          title: book.volumeInfo.title,
-          subtitle: book.volumeInfo.subtitle,
-          authors: book.volumeInfo.authors?.join(", "),
-          publisher: book.volumeInfo.publisher,
-          imageLinks: book.volumeInfo.imageLinks,
-          publishedDate: book.volumeInfo.publishedDate,
-          description: book.volumeInfo.description,
-          retailPrice: book.saleInfo.retailPrice,
-        };
-      });
+      const books = {
+        id: action.payload.id,
+        title: action.payload.title,
+        subtitle: action.payload.subtitle,
+        authors: action.payload.authors,
+        publisher: action.payload.publisher,
+        imageLinks: action.payload.imageLinks,
+        publishedDate: action.payload.publishedDate,
+        description: action.payload.description,
+        retailPrice: action.payload.retailPrice,
+      };
 
       return {
         ...state,
         favourites: {
           ...state.favourites,
-          content: [...state.favourites.content, action.payload],
-          data: books,
+          content: [...state.favourites.content, books],
+
           loading: false,
           error: null,
         },

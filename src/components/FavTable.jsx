@@ -6,7 +6,7 @@ import unavailableImage from "../assets/images/unavailable.png";
 
 const FavTable = () => {
   const dispatch = useDispatch();
-  const favourites = useSelector(state => state.favourites.content?.data);
+  const favourites = useSelector(state => state.favourites.favourites.content);
   console.log(favourites);
 
   if (!favourites) {
@@ -35,7 +35,7 @@ const FavTable = () => {
             <td className="text-center align-middle">
               <img
                 className="favPic rounded-circle"
-                src={book.thumbnail || unavailableImage}
+                src={book.imageLinks?.thumbnail || unavailableImage}
                 alt="Book cover"
                 width={80}
                 height={80}
