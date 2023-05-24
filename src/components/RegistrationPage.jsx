@@ -2,8 +2,17 @@ import { Card, Form, FormGroup } from "react-bootstrap";
 import flowers from "../assets/images/flowers.png";
 import logo from "../assets/images/logo.png";
 import RegistrationForm from "./RegistrationForm";
+import { useState } from "react";
+import LoadingSpinnerSmall from "./LoadingSpinnerSmall";
 
 const RegistrationPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const handleFormSubmit = async e => {
+    e.preventDefault();
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsLoading(false);
+  };
   return (
     <div className="loginContainer">
       <Card className="d-flex flex-column flex-md-row align-items-center">
@@ -18,9 +27,13 @@ const RegistrationPage = () => {
                 <Form.Check label="Remember me" />
               </FormGroup>
             </div>
-            <button type="submit" className="loginBtn">
-              Create account
-            </button>
+            {isLoading ? (
+              <LoadingSpinnerSmall />
+            ) : (
+              <button type="submit" className="loginBtn" onClick={handleFormSubmit}>
+                Create account
+              </button>
+            )}
           </Card.Text>
         </Card.Body>
       </Card>

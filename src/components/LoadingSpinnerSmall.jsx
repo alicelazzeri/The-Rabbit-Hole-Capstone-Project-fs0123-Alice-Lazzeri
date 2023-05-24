@@ -1,11 +1,11 @@
-const LoadingSpinner = () => {
+const LoadingSpinnerSmall = () => {
   return (
-    <div className="spinnerContainer">
-      <div class="book">
-        <div class="inner">
-          <div class="left"></div>
-          <div class="middle"></div>
-          <div class="right"></div>
+    <div className="spinnerContainerSmall">
+      <div className="bookSmall">
+        <div className="inner">
+          <div className="left"></div>
+          <div className="middle"></div>
+          <div className="right"></div>
         </div>
         <ul>
           <li></li>
@@ -32,4 +32,4 @@ const LoadingSpinner = () => {
   );
 };
 
-export default LoadingSpinner;
+export default LoadingSpinnerSmall;

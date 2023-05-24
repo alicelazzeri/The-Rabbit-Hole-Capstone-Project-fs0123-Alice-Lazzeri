@@ -3,8 +3,18 @@ import flowers from "../assets/images/flowers.png";
 import logo from "../assets/images/logo.png";
 import LoginForm from "./LoginForm";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import LoadingSpinnerSmall from "./LoadingSpinnerSmall";
 
 const LoginPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const handleFormSubmit = async e => {
+    e.preventDefault();
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsLoading(false);
+  };
+
   return (
     <div className="loginContainer">
       <Card className="d-flex flex-column flex-md-row align-items-center">
@@ -23,9 +33,13 @@ const LoginPage = () => {
               </Link>
             </div>
 
-            <button type="submit" className="loginBtn">
-              Sign in
-            </button>
+            {isLoading ? (
+              <LoadingSpinnerSmall />
+            ) : (
+              <button type="submit" className="loginBtn" onClick={handleFormSubmit}>
+                Sign in
+              </button>
+            )}
           </Card.Text>
           <p className="register">New on The Rabbit Hole?</p>
           <Link to="/register" className="createAccountLink">
