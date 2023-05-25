@@ -67,7 +67,7 @@ const FavTable = () => {
           {favourites.map((book, i) => (
             <tr key={i} id={book.id} className="tableRow">
               <td className="text-center align-middle">
-                <Link to={`/details/${book.id}`}>
+                <Link to={book.fromSearch ? `/search-details/${book.id}` : `/details/${book.id}`}>
                   <img
                     className="favPic rounded-circle"
                     src={book.imageLinks?.thumbnail || unavailableImage}
