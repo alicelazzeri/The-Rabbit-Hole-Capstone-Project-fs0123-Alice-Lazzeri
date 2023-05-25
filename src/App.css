@@ -67,10 +67,6 @@ body {
   padding-inline: 1rem;
 }
 
-/* .closeBtn {
-  color: #fefefe;
-} */
-
 .subtitle {
   font-family: "Gantari", sans-serif;
   font-size: 0.9rem;
@@ -530,7 +526,8 @@ body {
 .detailsBtn,
 .buyBtn,
 .addToFavBtn,
-.goBackBtn {
+.goBackBtn,
+.ratingBtn {
   color: #fefefe;
   border: none;
   padding-top: 0.5rem;
@@ -543,13 +540,25 @@ body {
   font-family: "Gantari", sans-serif;
 }
 
-.detailsBtn {
+.detailsBtn,
+.ratingBtn {
   background-color: #5a2727;
   transition: background-color 0.5s ease;
 }
 
-.detailsBtn:hover {
+.detailsBtn:hover,
+.ratingBtn:hover {
   background-color: #ca5f5f;
+}
+
+.ratingBtn {
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .buyBtn {
@@ -671,6 +680,12 @@ body {
 .favTitle {
   font-family: "Berkshire Swash", cursive;
   color: #1c3513;
+}
+
+.favBody {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 100;
 }
 
 .favPic {
@@ -1825,4 +1840,28 @@ body {
 
 .end-0 {
   right: 0 !important;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 25px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.modalSubTitle {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.saveBtn {
+  margin: 0 auto;
 }

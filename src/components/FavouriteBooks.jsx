@@ -27,7 +27,11 @@ const FavouritesBooks = () => {
 
   return (
     <div className="favContainer">
-      <h1 className="favTitle text-center text-sm-start ms-0 ms-sm-5">My Books</h1>
+      <h1 className="favTitle text-center ms-0">My Books</h1>
+      <p className="favBody mb-5 px-5">
+        In this section, you will find all the books you fell in love with, or those that simply piqued your attention.
+        You can give them a rating too, if you want!
+      </p>
       {isLoading ? (
         <LoadingSpinner />
       ) : favourites && favourites.length > 0 ? (

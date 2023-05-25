@@ -33,6 +33,7 @@ const SubmissionModal = props => {
     </Modal>
   );
 };
+
 const NewsletterForm = () => {
   const [validated, setValidated] = useState(false);
   const [modalShow, setModalShow] = useState(false);
