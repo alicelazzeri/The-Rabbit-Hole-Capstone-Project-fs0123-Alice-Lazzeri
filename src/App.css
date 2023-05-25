@@ -903,9 +903,15 @@ body {
   animation: fadeInOut 0.5s ease, fedeOutIn 0.5s ease;
 }
 
+.noFavContainer {
+  margin-top: 10rem;
+  background-color: #8aa789;
+}
+
 .noFavTitle {
   font-family: "Berkshire Swash", cursive;
   font-size: 3rem;
+  padding-top: 3rem;
 }
 
 .noFavBody {

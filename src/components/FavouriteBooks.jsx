@@ -39,7 +39,7 @@ const FavouritesBooks = () => {
           <FavTable />
         </div>
       ) : (
-        <div className="mt-5">
+        <div className="noFavContainer">
           <h1 className="noFavTitle mb-3">No favourite books have been added to the list yet. </h1>
           <p className="noFavBody mb-5">
             Go back to the homepage and search for your favourite books and add them to this section!

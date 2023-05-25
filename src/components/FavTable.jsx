@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { HiTrash } from "react-icons/hi2";
 import { useSelector, useDispatch } from "react-redux";
@@ -27,6 +27,17 @@ const FavTable = () => {
     }));
     setShowModal(false);
   };
+
+  useEffect(() => {
+    const storedRatings = localStorage.getItem("ratings");
+    if (storedRatings) {
+      setRatings(JSON.parse(storedRatings));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("ratings", JSON.stringify(ratings));
+  }, [ratings]);
 
   const renderStars = value => {
     const filledStars = "★".repeat(value);
