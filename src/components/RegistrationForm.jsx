@@ -4,7 +4,6 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import LoadingSpinnerSmall from "./LoadingSpinnerSmall";
 import { useNavigate } from "react-router-dom";
-import RegistrationToast from "./RegistrationToast";
 
 const RegistrationForm = () => {
   const [name, nameChange] = useState("");
@@ -13,7 +12,6 @@ const RegistrationForm = () => {
   const [password, passwordChange] = useState("");
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [showToast, setShowToast] = useState(false);
 
   const handleFormSubmit = async e => {
     e.preventDefault();
@@ -26,7 +24,6 @@ const RegistrationForm = () => {
       body: JSON.stringify(registrationObj),
     })
       .then(response => {
-        setShowToast(true);
         navigate("/login");
       })
       .catch(err => {
@@ -95,7 +92,6 @@ const RegistrationForm = () => {
           Create account
         </button>
       )}
-      {showToast && <RegistrationToast />}
     </div>
   );
 };
