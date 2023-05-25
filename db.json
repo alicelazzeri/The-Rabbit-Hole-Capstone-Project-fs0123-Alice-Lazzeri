@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "Alice",
+      "surname": "Lazzeri",
+      "email": "asd@gmail.it",
+      "password": "pippo",
+      "id": 1
+    },
+    {
+      "name": "Alice",
+      "surname": "Lazzeri",
+      "email": "alice.lazzeri@gmail.it",
+      "password": "pippo",
+      "id": 2
+    }
+  ]
 }

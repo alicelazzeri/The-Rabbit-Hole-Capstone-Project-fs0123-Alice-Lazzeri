@@ -9,7 +9,6 @@ import About from "./About";
 import NewReleases from "./NewReleases";
 import LoadingSpinner from "./LoadingSpinner";
 import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
 import { getBooksFetch } from "../redux/actions";
 
