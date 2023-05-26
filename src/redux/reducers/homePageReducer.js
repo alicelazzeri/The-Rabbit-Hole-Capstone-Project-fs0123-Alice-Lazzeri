@@ -3,8 +3,6 @@ import { GET_AUSTEN, GET_BOOKS, GET_CARROLL, GET_DICKENS, GET_HARDY } from "../a
 const initialState = {
   content: {
     data: [],
-    loading: true,
-    error: null,
   },
 };
 
@@ -56,8 +54,6 @@ const homePageReducer = (state = initialState, action) => {
         ...state,
         content: {
           data: carrollBooks,
-          loading: false,
-          error: null,
         },
       };
     case GET_AUSTEN:
@@ -81,8 +77,6 @@ const homePageReducer = (state = initialState, action) => {
         ...state,
         content: {
           data: austenBooks,
-          loading: false,
-          error: null,
         },
       };
 
@@ -107,8 +101,6 @@ const homePageReducer = (state = initialState, action) => {
         ...state,
         content: {
           data: dickensBooks,
-          loading: false,
-          error: null,
         },
       };
 
@@ -133,8 +125,6 @@ const homePageReducer = (state = initialState, action) => {
         ...state,
         content: {
           data: hardyBooks,
-          loading: false,
-          error: null,
         },
       };
 

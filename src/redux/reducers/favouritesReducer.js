@@ -25,9 +25,6 @@ const favouritesReducer = (state = initialState, action) => {
         favourites: {
           ...state.favourites,
           content: [...state.favourites.content, books],
-
-          loading: false,
-          error: null,
         },
       };
     case DELETE_FAVOURITES:

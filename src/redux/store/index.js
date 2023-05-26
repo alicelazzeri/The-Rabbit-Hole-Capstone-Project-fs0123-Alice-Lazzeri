@@ -5,7 +5,6 @@ import favouritesReducer from "../reducers/favouritesReducer";
 
 const rootReducer = combineReducers({
   home: homePageReducer,
-
   search: searchReducer,
   favourites: favouritesReducer,
 });

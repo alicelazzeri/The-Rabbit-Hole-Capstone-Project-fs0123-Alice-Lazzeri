@@ -3,18 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HomeButton from "./HomeButton";
 import unavailableImage from "../assets/images/unavailable.png";
-import { BsFillBagHeartFill, BsHeartArrow } from "react-icons/bs";
-import { getQueryBookFetch } from "../redux/actions";
-import { useEffect } from "react";
+import { BsFillBagHeartFill, BsFillBookmarkHeartFill, BsHeartArrow } from "react-icons/bs";
+import { addToFavouritesAction } from "../redux/actions";
 
-const BookDetails = () => {
+const SearchDetails = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getQueryBookFetch());
-  }, [dispatch]);
-
   const { id } = useParams();
-  const books = useSelector(state => state.home.content?.data);
+  const books = useSelector(state => state.search.content?.data);
   const book = books.find(book => book.id === id);
 
   if (!book) {
@@ -76,6 +71,18 @@ const BookDetails = () => {
                   Buy book
                   <BsFillBagHeartFill className="ms-2 mb-2" />
                 </Link>
+
+                <Link to="/favourites">
+                  <button
+                    onClick={() => {
+                      dispatch(addToFavouritesAction(book));
+                    }}
+                    className="addToFavBtn mt-3"
+                  >
+                    Add to Favourites
+                    <BsFillBookmarkHeartFill className="ms-2 mb-1" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -85,4 +92,4 @@ const BookDetails = () => {
   );
 };
 
-export default BookDetails;
+export default SearchDetails;

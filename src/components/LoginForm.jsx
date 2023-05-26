@@ -16,18 +16,24 @@ const LoginForm = () => {
       e.stopPropagation();
     } else {
       try {
-        const response = await fetch("http://localhost:3000/users/" + username);
+        const response = await fetch("http://localhost:3001/users");
         const resp = await response.json();
         console.log(resp);
+
         if (Object.keys(resp).length === 0) {
           console.log("Enter valid email");
         } else {
-          if (resp.password === password) {
-            console.log("Login successful");
-            // sessionStorage.setItem("username", username)
-            navigate("/");
+          const user = resp.find(user => user.username === username);
+          if (user) {
+            if (user.password === password) {
+              console.log("Login successful");
+              // sessionStorage.setItem("username", username);
+              navigate("/");
+            } else {
+              console.log("Enter valid password");
+            }
           } else {
-            console.log("Enter valid password");
+            console.log("User not found");
           }
         }
       } catch (err) {
@@ -40,12 +46,12 @@ const LoginForm = () => {
   return (
     <div className="formContainer">
       <Form noValidate validated={validated} onSubmit={handleLogin}>
-        <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
+        <FloatingLabel controlId="floatingInput" label="Username" className="mb-3">
           <Form.Control
             required
             className="loginInput"
-            type="email"
-            placeholder="name@example.com"
+            type="text"
+            placeholder="Username"
             value={username}
             onChange={e => setUsername(e.target.value)}
           />

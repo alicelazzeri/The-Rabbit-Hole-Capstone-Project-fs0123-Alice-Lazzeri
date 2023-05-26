@@ -3,8 +3,6 @@ import { GET_BOOK_QUERY } from "../actions";
 const initialState = {
   content: {
     data: [],
-    loading: false,
-    error: null,
   },
 };
 
@@ -31,8 +29,6 @@ const searchReducer = (state = initialState, action) => {
         ...state,
         content: {
           data: books,
-          loading: false,
-          error: null,
         },
       };
 
