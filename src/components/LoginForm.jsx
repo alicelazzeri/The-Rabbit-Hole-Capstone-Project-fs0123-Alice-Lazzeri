@@ -1,15 +1,33 @@
 import { useState } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, emailUpdate] = useState("");
   const [password, passwordUpdate] = useState("");
 
-  const handleLogin = e => {
+  const handleLogin = async e => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/users/" + email);
+      const resp = await response.json();
+      console.log(resp);
+      if (Object.keys(resp).length === 0) {
+        console.log("Enter valid email");
+      } else {
+        if (resp.password === password) {
+          console.log("Login successful");
+          // sessionStorage.setItem("email", email)
+          navigate("/");
+        } else {
+          console.log("Enter valid password");
+        }
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
