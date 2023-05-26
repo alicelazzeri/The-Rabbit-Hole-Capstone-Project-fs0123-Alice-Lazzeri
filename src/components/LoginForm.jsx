@@ -8,22 +8,8 @@ const LoginForm = () => {
   const [email, emailUpdate] = useState("");
   const [password, passwordUpdate] = useState("");
 
-  const handleFormSubmit = async e => {
+  const handleLogin = e => {
     e.preventDefault();
-
-    const url = "http://localhost:3000/users/" + email;
-    console.log(url);
-
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.error(err);
-      });
   };
 
   return (
@@ -49,7 +35,7 @@ const LoginForm = () => {
         />
       </FloatingLabel>
 
-      <button type="submit" className="loginBtn" onClick={handleFormSubmit}>
+      <button type="submit" className="loginBtn" onClick={handleLogin}>
         Sign in
       </button>
     </div>

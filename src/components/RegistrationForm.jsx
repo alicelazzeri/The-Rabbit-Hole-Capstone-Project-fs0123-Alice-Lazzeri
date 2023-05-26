@@ -2,37 +2,35 @@ import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import LoadingSpinnerSmall from "./LoadingSpinnerSmall";
 import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
-  const [name, nameChange] = useState("");
-  const [surname, surnameChange] = useState("");
-  const [email, emailChange] = useState("");
-  const [password, passwordChange] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormSubmit = async e => {
     e.preventDefault();
     let registrationObj = { name, surname, email, password };
     console.log(registrationObj);
 
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(registrationObj),
-    })
-      .then(response => {
-        navigate("/login");
-      })
-      .catch(err => {
-        return err.message;
+    try {
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(registrationObj),
       });
 
-    setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsLoading(false);
+      if (response.ok) {
+        navigate("/login");
+      } else {
+        throw new Error("Registration failed.");
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
@@ -46,7 +44,7 @@ const RegistrationForm = () => {
               type="text"
               placeholder="Name"
               value={name}
-              onChange={e => nameChange(e.target.value)}
+              onChange={e => setName(e.target.value)}
             />
           </FloatingLabel>
         </Col>
@@ -58,7 +56,7 @@ const RegistrationForm = () => {
               type="text"
               placeholder="Surname"
               value={surname}
-              onChange={e => surnameChange(e.target.value)}
+              onChange={e => setSurname(e.target.value)}
             />
           </FloatingLabel>
         </Col>
@@ -71,7 +69,7 @@ const RegistrationForm = () => {
           type="email"
           placeholder="name@example.com"
           value={email}
-          onChange={e => emailChange(e.target.value)}
+          onChange={e => setEmail(e.target.value)}
         />
       </FloatingLabel>
       <FloatingLabel controlId="floatingPassword" label="Password">
@@ -81,17 +79,13 @@ const RegistrationForm = () => {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={e => passwordChange(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
         />
       </FloatingLabel>
 
-      {isLoading ? (
-        <LoadingSpinnerSmall />
-      ) : (
-        <button type="submit" className="loginBtn" onClick={handleFormSubmit}>
-          Create account
-        </button>
-      )}
+      <button type="submit" className="loginBtn" onClick={handleFormSubmit}>
+        Create account
+      </button>
     </div>
   );
 };
