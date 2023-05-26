@@ -24,6 +24,15 @@
       "password": "pippo",
       "profilePic": "C:\\fakepath\\london_phone.jpg",
       "id": 3
+    },
+    {
+      "name": "Alice",
+      "surname": "Lazzeri",
+      "username": "pippo",
+      "email": "pippo@hotmail.it",
+      "password": "pippo",
+      "profilePic": "C:\\fakepath\\london_phone.jpg",
+      "id": 4
     }
   ]
 }
