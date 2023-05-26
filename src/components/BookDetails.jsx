@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HomeButton from "./HomeButton";
 import unavailableImage from "../assets/images/unavailable.png";
-import { BsFillBagHeartFill, BsFillBookmarkHeartFill, BsHeartArrow } from "react-icons/bs";
-import { addToFavouritesAction, getBooksFetch } from "../redux/actions";
+import { BsFillBagHeartFill, BsHeartArrow } from "react-icons/bs";
+import { getBooksFetch } from "../redux/actions";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -92,18 +92,6 @@ const BookDetails = () => {
                     >
                       Buy book
                       <BsFillBagHeartFill className="ms-2 mb-2" />
-                    </Link>
-
-                    <Link to="/favourites">
-                      <button
-                        onClick={() => {
-                          dispatch(addToFavouritesAction);
-                        }}
-                        className="addToFavBtn mt-3"
-                      >
-                        Add to Favourites
-                        <BsFillBookmarkHeartFill className="ms-2 mb-1" />
-                      </button>
                     </Link>
                   </div>
                 </div>
