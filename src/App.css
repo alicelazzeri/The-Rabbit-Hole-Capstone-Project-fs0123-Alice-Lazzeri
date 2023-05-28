@@ -906,6 +906,15 @@ body {
 .noFavContainer {
   margin-top: 10rem;
   background-color: #8aa789;
+  box-shadow: 5px 4px 16px 0px #000000;
+  min-width: 500px;
+  padding-inline: 4rem;
+  border-radius: 15px;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .noFavTitle {
