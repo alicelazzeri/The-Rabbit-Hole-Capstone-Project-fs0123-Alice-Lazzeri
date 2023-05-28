@@ -27,7 +27,7 @@ const LoginForm = () => {
           if (user) {
             if (user.password === password) {
               console.log("Login successful");
-              // sessionStorage.setItem("username", username);
+
               navigate("/");
             } else {
               console.log("Enter valid password");
