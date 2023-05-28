@@ -1409,3 +1409,22 @@ body {
 .saveBtn {
   margin: 0 auto;
 }
+
+.favouritesToast {
+  width: 500px;
+}
+
+.toastTitle {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 1.5rem;
+  color: #1c3513;
+}
+
+.toastBody {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.6rem;
+}
+
+.toastSpan {
+  font-weight: bold;
+}

@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Toast } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { BsFillBookmarkHeartFill, BsFillBagHeartFill } from "react-icons/bs";
 import { HiPlusCircle } from "react-icons/hi";
@@ -6,10 +6,20 @@ import { useDispatch, useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
 import { addToFavouritesAction } from "../redux/actions";
+import { useState } from "react";
 
 const SearchCard = () => {
   const dispatch = useDispatch();
   const search = useSelector(state => state.search.content?.data);
+  const [showToast, setShowToast] = useState(false);
+  const toggleShowToast = () => {
+    setShowToast(!showToast);
+  };
+
+  const handleAddToFavourites = book => {
+    dispatch(addToFavouritesAction(book));
+    toggleShowToast();
+  };
 
   return (
     <Container fluid>
@@ -46,24 +56,29 @@ const SearchCard = () => {
                     Buy book
                     <BsFillBagHeartFill className="ms-2 mb-2" />
                   </Link>
-
-                  <Link to="/favourites">
-                    <button
-                      onClick={() => {
-                        dispatch(addToFavouritesAction(book));
-                      }}
-                      className="addToFavBtn mt-3"
-                    >
-                      Add to Favourites
-                      <BsFillBookmarkHeartFill className="ms-2 mb-2" />
-                    </button>
-                  </Link>
+                  <button onClick={() => handleAddToFavourites(book)} className="addToFavBtn mt-3">
+                    Add to Favourites
+                    <BsFillBookmarkHeartFill className="ms-2 mb-2" />
+                  </button>
                 </div>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+      <Toast
+        show={showToast}
+        onClose={toggleShowToast}
+        className="position-fixed top-0 end-0 m-3"
+        style={{ zIndex: 9999 }}
+      >
+        <Toast.Header>
+          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+          <strong className="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+        </Toast.Header>
+        <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+      </Toast>
     </Container>
   );
 };
