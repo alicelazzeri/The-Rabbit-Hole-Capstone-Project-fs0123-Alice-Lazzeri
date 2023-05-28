@@ -58,7 +58,7 @@ const BookDetails = () => {
               <div className="buttonsContainer d-flex justify-content-center justify-content-lg-start align-items-center gap-4 flex-wrap">
                 <Link to="/">
                   <button className="goBackBtn mt-3">
-                    Go back
+                    Back to Home
                     <BsHeartArrow className="ms-2 mb-1" />
                   </button>
                 </Link>
