@@ -52,18 +52,20 @@ const NewsletterForm = () => {
   return (
     <Form className="newsletterForm" noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3 mt-4 mt-md-5">
-        <Form.Group className="mb-3 mb-md-0" as={Col} md="6" controlId="validationCustom01">
+        <Form.Group className="mb-3 mb-md-0" as={Col} md="6" controlId="validationCustomName">
           <Form.Control required type="text" placeholder="Name" />
+          <Form.Control.Feedback type="invalid">Please choose a name.</Form.Control.Feedback>
         </Form.Group>
-        <FormGroup as={Col} md="6" controlId="validationCustom02">
+        <FormGroup as={Col} md="6" controlId="validationCustomSurname">
           <Form.Control required type="text" placeholder="Surname" />
+          <Form.Control.Feedback type="invalid">Please choose a surname.</Form.Control.Feedback>
         </FormGroup>
       </Row>
       <Row>
-        <FormGroup as={Col} md="12" controlId="validationCustomUsername">
+        <FormGroup as={Col} md="12" controlId="validationCustomEmail">
           <InputGroup hasValidation>
             <Form.Control type="text" placeholder="Email" aria-describedby="inputGroupPrepend" required />
-            <Form.Control.Feedback type="invalid">Please choose a username.</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">Please choose an email.</Form.Control.Feedback>
           </InputGroup>
         </FormGroup>
       </Row>
