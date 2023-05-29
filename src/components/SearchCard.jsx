@@ -31,7 +31,7 @@ const SearchCard = () => {
                 className="cardImage"
                 variant="top"
                 width={200}
-                height={450}
+                height={400}
                 src={book.imageLinks?.thumbnail || unavailableImage}
               />
               <Card.Body>
@@ -40,9 +40,9 @@ const SearchCard = () => {
                   <p className="bookAuthor text-truncate">{book.authors}</p>
                   <p className="bookPrice">{book.publisher}</p>
                 </Card.Text>
-                <div className="d-flex flex-wrap justify-content-around align-items-center mt-4">
+                <div className="d-flex flex-wrap justify-content-around align-items-center mt-5 gap-4">
                   <Link to={`/search-details/${book.id}`}>
-                    <button className="detailsBtn mb-md-3 mb-lg-0">
+                    <button className="detailsBtn">
                       Details
                       <HiPlusCircle className="ms-2 mb-1" />
                     </button>
@@ -56,7 +56,7 @@ const SearchCard = () => {
                     Buy book
                     <BsFillBagHeartFill className="ms-2 mb-2" />
                   </Link>
-                  <button onClick={() => handleAddToFavourites(book)} className="addToFavBtn mt-3">
+                  <button onClick={() => handleAddToFavourites(book)} className="addToFavBtn">
                     Add to Favourites
                     <BsFillBookmarkHeartFill className="ms-2 mb-2" />
                   </button>
