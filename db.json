@@ -3,45 +3,11 @@
     {
       "name": "Alice",
       "surname": "Lazzeri",
-      "email": "asd@gmail.it",
-      "password": "pippo",
-      "id": 1
-    },
-    {
-      "name": "Alice",
-      "surname": "Lazzeri",
-      "username": "pippo",
-      "email": "pippo@hotmail.it",
-      "password": "pippo",
-      "profilePic": "C:\\fakepath\\london_phone.jpg",
-      "id": 2
-    },
-    {
-      "name": "Roberta",
-      "surname": "Gavazzi",
-      "username": "pippo",
-      "email": "pippo@gmail.com",
-      "password": "pippo",
-      "profilePic": "C:\\fakepath\\london_phone.jpg",
-      "id": 3
-    },
-    {
-      "name": "Alice",
-      "surname": "Lazzeri",
-      "username": "pippo",
-      "email": "pippo@hotmail.it",
-      "password": "pippo",
-      "profilePic": "C:\\fakepath\\london_phone.jpg",
-      "id": 4
-    },
-    {
-      "name": "Alice",
-      "surname": "Lazzeri",
       "username": "alice",
-      "email": "pippo@hotmail.com",
+      "email": "pippo@pippo.com",
       "password": "pippo",
       "profilePic": "C:\\fakepath\\london_phone.jpg",
-      "id": 5
+      "id": 1
     }
   ]
 }

@@ -1,13 +1,35 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
+
+const WelcomeModal = props => {
+  return (
+    <Modal {...props} size="lg" centered>
+      <Modal.Header closeButton>
+        <Modal.Title>Modal heading</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+          Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [validated, setValidated] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleLogin = async e => {
     e.preventDefault();
@@ -27,7 +49,8 @@ const LoginForm = () => {
           if (user) {
             if (user.password === password) {
               console.log("Login successful");
-
+              setShowModal(true);
+              console.log("modal appears");
               navigate("/");
             } else {
               console.log("Enter valid password");
@@ -73,6 +96,7 @@ const LoginForm = () => {
           Sign in
         </button>
       </Form>
+      <WelcomeModal show={showModal} onHide={() => setShowModal(false)} />
     </div>
   );
 };
