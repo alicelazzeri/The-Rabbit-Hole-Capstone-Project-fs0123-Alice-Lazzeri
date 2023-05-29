@@ -5,12 +5,43 @@ import HomeButton from "./HomeButton";
 import unavailableImage from "../assets/images/unavailable.png";
 import { BsFillBagHeartFill, BsFillBookmarkHeartFill, BsHeartArrow } from "react-icons/bs";
 import { addToFavouritesAction } from "../redux/actions";
+import { useEffect, useState } from "react";
+import { Toast } from "react-bootstrap";
+import logo from "../assets/images/logo.png";
 
 const BookDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const books = useSelector(state => state.home.content?.data);
   const book = books.find(book => book.id === id);
+  const [toasts, setToasts] = useState([]);
+
+  const handleAddToFavourites = book => {
+    dispatch(addToFavouritesAction(book));
+    setToasts(prevToasts => [book.title, ...prevToasts]);
+  };
+
+  const handleRemoveToast = index => {
+    setToasts(prevToasts => {
+      const updatedToasts = [...prevToasts];
+      updatedToasts.splice(index, 1);
+      return updatedToasts;
+    });
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setToasts(prevToasts => {
+        if (prevToasts.length > 0) {
+          const updatedToasts = [...prevToasts];
+          updatedToasts.pop();
+          return updatedToasts;
+        }
+        return prevToasts;
+      });
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [toasts]);
 
   if (!book) {
     return (
@@ -72,22 +103,44 @@ const BookDetails = () => {
                   <BsFillBagHeartFill className="ms-2 mb-2" />
                 </Link>
 
-                <Link to="/favourites">
-                  <button
-                    onClick={() => {
-                      dispatch(addToFavouritesAction(book));
-                    }}
-                    className="addToFavBtn mt-3"
-                  >
-                    Add to Favourites
-                    <BsFillBookmarkHeartFill className="ms-2 mb-1" />
-                  </button>
-                </Link>
+                <button onClick={() => handleAddToFavourites(book)} className="addToFavBtn mt-3">
+                  Add to Favourites
+                  <BsFillBookmarkHeartFill className="ms-2 mb-2" />
+                </button>
               </div>
             </div>
           </div>
         </Card.Body>
       </Card>
+      <div className="toastContainer">
+        {toasts.map((title, index) => (
+          <Toast
+            key={index}
+            show
+            onClose={() => handleRemoveToast(index)}
+            className="favouritesToast position-fixed top-0 end-0 m-3"
+            style={{ zIndex: 9999 - index }}
+          >
+            <Toast.Header>
+              <img src={logo} className="rounded me-2" width={50} height={50} alt="Logo pic" />
+              <strong className="toastTitle me-auto">The Rabbit Hole</strong>
+            </Toast.Header>
+            <Toast.Body className="toastBody">
+              Terrific! You just added{" "}
+              <span className="toastSpan">
+                <em>{title}</em>
+              </span>{" "}
+              to your favourite books! 📚
+            </Toast.Body>
+            <Link to="/favourites">
+              <button className="addToFavBtn my-4">
+                Check your Favourites
+                <BsFillBookmarkHeartFill className="ms-2 mb-2" />
+              </button>
+            </Link>
+          </Toast>
+        ))}
+      </div>
     </div>
   );
 };

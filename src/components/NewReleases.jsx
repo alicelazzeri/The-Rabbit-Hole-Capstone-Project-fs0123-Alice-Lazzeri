@@ -5,9 +5,9 @@ const NewReleases = () => {
     <>
       <div className="releasesContainer">
         <div className="divider"></div>
-        <h1 className="releasesTitle text-center text-md-start">Recently viewed</h1>
+        <h1 className="releasesTitle text-center text-md-start">Newly released</h1>
         <p className="releasesBody text-center text-md-start">
-          Check again the books you recently viewed from our collection!
+          Take a glimpse at the newly released books from our collection!
         </p>
       </div>
       <div>

@@ -6,20 +6,40 @@ import { useDispatch, useSelector } from "react-redux";
 import unavailableImage from "../assets/images/unavailable.png";
 import { Link } from "react-router-dom";
 import { addToFavouritesAction } from "../redux/actions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import logo from "../assets/images/logo.png";
 
 const SearchCard = () => {
   const dispatch = useDispatch();
   const search = useSelector(state => state.search.content?.data);
-  const [showToast, setShowToast] = useState(false);
-  const toggleShowToast = () => {
-    setShowToast(!showToast);
-  };
+  const [toasts, setToasts] = useState([]);
 
   const handleAddToFavourites = book => {
     dispatch(addToFavouritesAction(book));
-    toggleShowToast();
+    setToasts(prevToasts => [book.title, ...prevToasts]);
   };
+
+  const handleRemoveToast = index => {
+    setToasts(prevToasts => {
+      const updatedToasts = [...prevToasts];
+      updatedToasts.splice(index, 1);
+      return updatedToasts;
+    });
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setToasts(prevToasts => {
+        if (prevToasts.length > 0) {
+          const updatedToasts = [...prevToasts];
+          updatedToasts.pop();
+          return updatedToasts;
+        }
+        return prevToasts;
+      });
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [toasts]);
 
   return (
     <Container fluid>
@@ -66,19 +86,35 @@ const SearchCard = () => {
           </Col>
         ))}
       </Row>
-      <Toast
-        show={showToast}
-        onClose={toggleShowToast}
-        className="position-fixed top-0 end-0 m-3"
-        style={{ zIndex: 9999 }}
-      >
-        <Toast.Header>
-          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-          <strong className="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </Toast.Header>
-        <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
-      </Toast>
+      <div className="toastContainer">
+        {toasts.map((title, index) => (
+          <Toast
+            key={index}
+            show
+            onClose={() => handleRemoveToast(index)}
+            className="favouritesToast position-fixed top-0 end-0 m-3"
+            style={{ zIndex: 9999 - index }}
+          >
+            <Toast.Header>
+              <img src={logo} className="rounded me-2" width={50} height={50} alt="Logo pic" />
+              <strong className="toastTitle me-auto">The Rabbit Hole</strong>
+            </Toast.Header>
+            <Toast.Body className="toastBody">
+              Terrific! You just added{" "}
+              <span className="toastSpan">
+                <em>{title}</em>
+              </span>{" "}
+              to your favourite books! 📚
+            </Toast.Body>
+            <Link to="/favourites">
+              <button className="addToFavBtn my-4">
+                Check your Favourites
+                <BsFillBookmarkHeartFill className="ms-2 mb-2" />
+              </button>
+            </Link>
+          </Toast>
+        ))}
+      </div>
     </Container>
   );
 };
