@@ -1425,15 +1425,65 @@ body {
   font-weight: bold;
 }
 
-.toastFade {
-  animation: fade 0.5s;
+.welcomeModalTitle {
+  font-family: "Berkshire Swash", cursive;
+  color: #1c3513;
+  font-size: 2.8rem;
+  padding-block: 1rem;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.welcomeModalSubtitle {
+  text-align: center;
+  font-family: "Gantari", sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.welcomeModalSubtitleSpan {
+  font-family: "Berkshire Swash", cursive;
+  color: #1c3513;
+}
+
+.welcomeModalBody {
+  text-align: center;
+  font-family: "Gantari", sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.welcomeBtnContainer {
+  margin: 0 auto;
+  padding-block: 1rem;
+}
+
+.welcomeModalBtn,
+.modalHomeBtn {
+  font-family: "Gantari", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-inline: 1.5rem;
+  padding-block: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  color: #fefefe;
+  transition: background-color 0.5 ease;
+}
+
+.welcomeModalBtn {
+  background-color: #5a2727;
+  transition: background-color 0.5 ease;
+}
+
+.welcomeModalBtn:hover {
+  background-color: #ca5f5f;
+}
+
+.modalHomeBtn {
+  background-color: #e0aa35;
+  transition: background-color 0.5 ease;
+}
+
+.modalHomeBtn:hover {
+  background-color: #fece6d;
 }
